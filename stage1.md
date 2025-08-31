@@ -8,41 +8,42 @@
 
 ## 1. Description of the Computational Object
 
-* The **PageRank algorithm** was created by **Larry Page** and **Sergey Brin**.
+* The **PageRank algorithm** was created in 1996 by **Larry Page** and **Sergey Brin** at Stanford University.
 * It assigns a **numerical score** to web pages based on the number and the “quality” of incoming links.
 * Links from more important pages contribute more to the rank.
+* It was the foundation of all of the early Google search engine, where it ranked web pages based on their importance.
 
 ### Recursive definition
 
-* The PageRank of a page is **defined recursively**, depending on the number and PageRank metric of all pages that reference it.
+* The PageRank of a page is defined **recursively**, depending on the number and PageRank metric of all pages that reference it.
 
 ### Context
 
-* Many **implementations and variations** of the PageRank algorithm exist.
+* Many implementations and variations of the PageRank algorithm exist.
 * Several scientific papers analyze its efficiency.
-* It was the **main algorithm used by Google** to rank web pages for years.
+* It was the **main algorithm** used by Google to rank web pages for years.
 
 ---
 
 ## 2. Choice of Analysis Method
 
-* Our goal is to **compare the efficiency** of the PageRank algorithm when executed:
+* Our goal is to **compare the efficiency of the PageRank algorithm** when executed:
 
   * **Sequentially**
-  * **In parallel using OpenMP**
+  * **In parallel using OpenMP**, changing the number of threads
 
 * We adopted a **measurement-based approach**:
 
   * Measure execution time.
-  * Observe the impact of parallelization.
   * Collect system metrics such as cache hits/misses and CPU usage.
+  * Observe the impact of parallelization.
 
 ### Execution Environment
 
 * We will use computers from the **Laboratory of Parallel and Distributed Computing (PCAD)**.
 * Each benchmark will be run **10 times**:
 
-  * 5 times using **Intel® VTune™ Profiler**.
+  * 5 times using the **Intel® VTune™ Profiler**.
   * 5 times without the profiler (to measure execution time and energy consumption).
 
 ### Metrics to collect
@@ -50,6 +51,7 @@
 * Estimated energy consumption (Watts).
 * L1, L2, L3 cache hit rate (%).
 * CPU usage (%).
+* Execution time (Seconds) and actual energy consumption (Watts), without the profiler overhead.
 * Additional metrics may be considered as the project advances.
 
 ### Implementation chosen
@@ -57,17 +59,48 @@
 * We will use the **PageRank implementation from the GAP Benchmark Suite (GAPBS)**.
 * This suite was proposed by students from **Berkeley University** and is widely used in research.
 
+#### About the GAP Benchmark Suite (GAPBS)
+
+* The **GAP Benchmark Suite** is a standardized set of graph algorithms designed for performance evaluation.
+* Because it was proposed by researchers at Berkeley, it became widely used in academia in a short amount of time.
+* Includes implementations of:
+
+  * **PageRank**
+  * Breadth-First Search (BFS)
+  * Connected Components (CC)
+  * Single-Source Shortest Path (SSSP)
+* Why we chose it:
+
+  * High-quality C++ reference implementations.
+  * Portable and efficient.
+  * Enables comparisons with already published research.
+
 ### Input graphs
 
 * We will use datasets from the **Stanford Large Network Dataset Collection (SNAP)**.
 
----
+#### About the Stanford Large Network Dataset Collection (SNAP)
+
+* The **Stanford Network Analysis Project (SNAP)** hosts a large repository of real-world graph datasets.
+* Widely used in graph algorithm research, including PageRank.
+* Example datasets we could use:
+
+  * **Web graphs**: snapshots of pages and hyperlinks.
+  * **Social networks**: Twitter, Facebook friendship graphs.
+  * **Citation networks**: ArXiv collaboration networks, etc.
+* Why SNAP?
+
+  * Scientifically rigorous and cited in many publications.
+  * Offers datasets of different sizes (from thousands to millions of nodes).
+  * Well-documented, making results reproducible.
+
+
 
 ## 3. Justification for Choosing PageRank
 
 * In the course **Parallel and Distributed Programming (INF-01008)** we study different methods of algorithm parallelization.
-* Therefore, we preferred to choose an algorithm we are already **familiar with**.
-* This project will allow us to **combine the final works of two courses**.
+* Therefore, we preferred to choose an algorithm we are already familiar with.
+* This project will allow us to combine the final works of two courses.
 * Additionally, Thiago has prior research experience in **LPPD**, working directly with PCAD and CPU metrics collection.
 
 ---
@@ -76,11 +109,13 @@
 
 📅 **2025-09-08 to 2025-09-15 (1 week)**
 
-* Implement PageRank parallelization using **OpenMP**.
+* Validate the Gap Benchmark Suite's implementation of PageRank parallelization using OpenMP.
+* Decide on the number of threads we will test during the execution of our parallel program.
 
 📅 **2025-09-17 to 2025-09-29 (12 days)**
 
 * Run benchmarks on PCAD for both sequential and parallel PageRank.
+* Collect our metrics with both the Profiler on and off, executing the experiments 5 times considering each case.
 
 📅 **2025-10-13 to 2025-11-13 (1 month)**
 
