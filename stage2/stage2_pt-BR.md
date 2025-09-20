@@ -14,7 +14,11 @@ Os parâmetros decididos foram:
 - Vamos utilizar o governor DVFS performance.
 - O benchmark só deve ser feito caso a temperatura do processador esteja menor que 30 graus celsius.
 
-Decidimos que vamos utilizar a máquina do PCAD "blaise", pois ela possui dois processadores Intel(R) Xeon(R) E5-2699 v4, com 22 Cores cada que rodam com frequências base de 2.20GHz.
+Decidimos que vamos utilizar a máquina do PCAD "blaise", pois ela possui dois processadores Intel(R) Xeon(R) E5-2699 v4, com 22 Cores cada que rodam com frequências base de 2.20GHz. Cada um dos processadores possui 44 Threads, das quais 22 são físicas e 22 lógicas.
+
+Além disso, decidimos que vamos utilizar **apenas uma CPU**, pra evitar problemas e variação na comunicação entre CPUs, tornando nossos resultados mais consistentes.
+
+Vamos utilizar uma flag do OpenMP chamada "GOMP_CPU_AFFINITY="0-21 44-65", que significa que o socket 0 utiliza as threads 0-21 e 44-65 do computador.
 
 Quanto ao Intel VTune, pretendemos utilizar os seguintes tipos de análise disponíveis pela aplicação:
 - **performance-snapshot**:
@@ -28,5 +32,3 @@ Quanto ao Intel VTune, pretendemos utilizar os seguintes tipos de análise dispo
     - Quando usar: apps paralelas (muitos threads ou MPI). Mesmo em 1 CPU, útil para saber se o kernel está memory-bound e o nível de vetor/IPC.
     - Overhead: moderado; usa mais contadores de HW.
     - Saída: resumo HPC, roofline, breakdown compute vs memory bound, métricas de paralelismo (OpenMP/MPI).
-
-Além disso, decidimos que vamos utilizar **apenas uma CPU**, pra evitar problemas e variação na comunicação entre CPUs, tornando nossos resultados mais consistentes.

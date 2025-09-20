@@ -9,6 +9,7 @@ THREADS=24             # número fixo de threads OpenMP
 MAX_ITERS=50         # iterações do PageRank (-i)
 TOLERANCE="1e-4"      # tolerância do PageRank (-t)
 
+#export GOMP_CPU_AFFINITY="0-21 44-65"
 need_cmd() { command -v "$1" >/dev/null 2>&1 || { echo "Missing dependency: $1"; exit 1; }; }
 need_cmd wget
 need_cmd awk
