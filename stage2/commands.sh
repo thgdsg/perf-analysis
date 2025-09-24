@@ -1,0 +1,9 @@
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 1 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 4 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 12 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 22 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 28 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 36 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 44 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-Google -graph-url https://snap.stanford.edu/data/web-Google.txt.gz -kernel pr -threads 66 -max-iters 50 -tolerance 1e-4 && 
+./src/executa_bench.sh -graph-name web-BerkStan -graph-url https://snap.stanford.edu/data/web-BerkStan.txt.gz -kernel pr -threads 88 -max-iters 50 -tolerance 1e-4 -gap-logs
