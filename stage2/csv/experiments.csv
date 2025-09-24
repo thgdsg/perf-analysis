@@ -1,0 +1,10 @@
+GRAPH_NAME,GRAPH_URL,KERNEL,THREADS,MAX_ITERS,TOLERANCE,LOGS_GAPBS,
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,1,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,4,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,12,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,22,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,28,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,36,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,44,50,1e-4, false
+web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,pr,66,50,1e-4, false
+web-BerkStan,https://snap.stanford.edu/data/web-BerkStan.txt.gz,pr,88,50,1e-4, true
