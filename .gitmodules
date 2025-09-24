@@ -1,3 +1,0 @@
-[submodule "stage2/scripts/gapbs"]
-	path = stage2/scripts/gapbs
-	url = https://github.com/sbeamer/gapbs.git
