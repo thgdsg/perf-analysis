@@ -5,7 +5,7 @@ Criamos o executa_bench.sh, nosso script que faz as seguintes coisas:
 2. Converte pro padrão de entrada do benchmark
 3. Executa o benchmark com os parâmetros passados dentro do código
 4. Salva os logs em uma pasta "logs"
-// TODO - transformar o script em um que integre o Intel VTune Profiler na execução
+// TODO - DEFINIR TEMP MAX DE EXECUÇÃO, GOVERNOR PERFORMANCE
 
 Os parâmetros decididos foram:
 - Máximo de 50 iterações, pois garante que o algoritmo vai executar até os valores calculados ficarem dentro da tolerância desejada (estabilizarem).
