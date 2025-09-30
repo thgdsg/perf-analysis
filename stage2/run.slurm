@@ -18,8 +18,17 @@
 
 set -euo pipefail
 
-# Diretório base do projeto (ajuste se enviar de outro local com --chdir)
-PROJECT_DIR="$(dirname "$0")"
+# Define o diretório do projeto no SCRATCH, com fallback para o diretório do script
+if [[ -n "${SCRATCH:-}" ]]; then
+  PROJECT_DIR="${SCRATCH}/perf-analysis/stage2"
+  if [[ ! -d "$PROJECT_DIR" ]]; then
+    echo "[WARN] Diretório não existe em SCRATCH: $PROJECT_DIR. Usando diretório do script."
+    PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+  fi
+else
+  echo "[WARN] SCRATCH não definido. Usando diretório do script."
+  PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+fi
 cd "$PROJECT_DIR"
 
 echo "[INFO] Iniciando job em: $(pwd)"
