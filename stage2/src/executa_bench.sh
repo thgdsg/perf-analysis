@@ -224,11 +224,31 @@ validate_required_params
 # Mostra os parâmetros parseados
 show_parsed_params
 
-# Verifica se disable_hyperthreading é "true" e imprime "oi"
+# Afinidade de threads conforme a flag de hyperthreading
 if [[ "$DISABLE_HYPERTHREADING" == "true" ]]; then
-  echo "oi"
+
+  # OpenMP: usa apenas núcleos físicos (1 thread por core)
+  export OMP_PLACES=cores
+  export OMP_PROC_BIND=close
+
+  # libgomp: fixa 1 logical por core (primeiro irmão de cada core)
+  export GOMP_CPU_AFFINITY="$(
+    lscpu -e=CPU,CORE,ONLINE | awk 'NR>1 && $3=="yes"{core=$2; if (!(core in first)) {first[core]=$1} if (core>max) max=core}
+      END{sep=""; for(i=0;i<=max;i++){ if (i in first){ printf "%s%s", sep, first[i]; sep="," }}}'
+  )"
 else
-  echo "oi2"
+  export OMP_PLACES=threads
+  export OMP_PROC_BIND=close
+
+  # libgomp: liste primeiro 1 logical por core, depois os hyperthreads (mantém bom escalonamento com N<44)
+  export GOMP_CPU_AFFINITY="$(
+    lscpu -e=CPU,CORE,ONLINE | awk 'NR>1 && $3=="yes"{core=$2; if (!(core in first)) {first[core]=$1} else {second[core]=$1} if (core>max) max=core}
+      END{
+        sep="";
+        for(i=0;i<=max;i++){ if (i in first){ printf "%s%s", sep, first[i]; sep="," }}
+        for(i=0;i<=max;i++){ if (i in second){ printf "%s%s", sep, second[i]; sep="," }}
+      }'
+  )"
 fi
 
 # Cria as pastas de dados, resultados e logs (logs apenas se habilitado)
@@ -253,6 +273,9 @@ cmd=( "vtune" "-collect" "$ANALYSIS_TYPE" "-result-dir" "$results_dir" "--" "$ga
 echo "[INFO] Rodando: ${cmd[*]}"
 echo "[INFO] Variáveis de ambiente OpenMP:"
 echo "[INFO] OMP_NUM_THREADS=$OMP_NUM_THREADS"
+echo "[INFO] OMP_PLACES=${OMP_PLACES:-'(não definido)'}"
+echo "[INFO] OMP_PROC_BIND=${OMP_PROC_BIND:-'(não definido)'}"
+echo "[INFO] GOMP_CPU_AFFINITY=${GOMP_CPU_AFFINITY:-'(não definido)'}"
 echo "[INFO] OMP_THREAD_BIND_POLICY=$OMP_THREAD_BIND_POLICY"
 
 if [[ "$ENABLE_LOGS" == "true" ]]; then
