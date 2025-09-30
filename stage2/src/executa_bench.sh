@@ -14,23 +14,27 @@ need_cmd date
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 gapbs_dir="$script_dir/gapbs"
-data_dir="$script_dir/data"
-logs_root="$script_dir/logs"
+data_dir="./data"
+logs_root="./logs"
 
 # Vars para o script (valores padrão)
 THREADS=1
 MAX_ITERS=50
 TOLERANCE=1e-4
-GRAPH_NAME=
-GRAPH_URL=
 KERNEL=pr
+ANALYSIS_TYPE=performance-snapshot
 ENABLE_LOGS=false
+GRAPH_NAME=""
+GRAPH_URL=""
+THREAD_BIND_POLICY=""
+DISABLE_HYPERTHREADING=""
 
 # Função para mostrar ajuda
 show_help() {
     echo "Uso: $0 [opções]"
     echo "Opções:"
     echo "  -threads N        Número de threads (padrão: 1)"
+    echo "  -analysis-type TYPE        Tipo de análise (padrão: performance-snapshot)"
     echo "  -max-iters N      Máximo de iterações (padrão: 50)"
     echo "  -tolerance T      Tolerância (padrão: 1e-4)"
     echo "  -graph-name NAME  Nome do grafo (obrigatório)"
@@ -67,9 +71,12 @@ show_parsed_params() {
     echo "[INFO] THREADS=$THREADS"
     echo "[INFO] MAX_ITERS=$MAX_ITERS"
     echo "[INFO] TOLERANCE=$TOLERANCE"
-    echo "[INFO] GRAPH_NAME=$GRAPH_NAME"
-    echo "[INFO] GRAPH_URL=$GRAPH_URL"
+    echo "[INFO] GRAPH_NAME=${GRAPH_NAME:-'(não definido)'}"
+    echo "[INFO] GRAPH_URL=${GRAPH_URL:-'(não definido)'}"
     echo "[INFO] KERNEL=$KERNEL"
+    echo "[INFO] ANALYSIS_TYPE=${ANALYSIS_TYPE:-'(não definido)'}"
+    echo "[INFO] THREAD_BIND_POLICY=${THREAD_BIND_POLICY:-'(não definido)'}"
+    echo "[INFO] DISABLE_HYPERTHREADING=${DISABLE_HYPERTHREADING:-'(não definido)'}"
     echo "[INFO] ENABLE_LOGS=$ENABLE_LOGS"
     echo ""
 }
@@ -126,9 +133,33 @@ parse_arguments() {
                 KERNEL="$2"
                 shift 2
                 ;;
+            -analysis-type)
+                if [[ -z "$2" || "$2" =~ ^- ]]; then
+                    echo "Erro: -analysis-type requer um valor"
+                    exit 1
+                fi
+                ANALYSIS_TYPE="$2"
+                shift 2
+                ;;
             -gap-logs)
                 ENABLE_LOGS=true
                 shift
+                ;;
+            -thread-bind-policy)
+                if [[ -z "$2" || "$2" =~ ^- ]]; then
+                    echo "Erro: -thread-bind-policy requer um valor"
+                    exit 1
+                fi
+                THREAD_BIND_POLICY="$2"
+                shift 2
+                ;;
+            -disable-hyperthreading)
+                if [[ -z "$2" || "$2" =~ ^- ]]; then
+                    echo "Erro: -disable-hyperthreading requer um valor"
+                    exit 1
+                fi
+                DISABLE_HYPERTHREADING="$2"
+                shift 2
                 ;;
             -h|--help)
                 show_help
@@ -182,12 +213,6 @@ get_graph_data() {
     awk '!/^#/ && NF>=2 {print $1, $2}' "$text_path" > "$el_path"
   fi
 
-  # Converte para .sg
-  sg_path="$graph_dir/${GRAPH_NAME}.sg"
-  if [[ ! -s "$sg_path" ]]; then
-    echo "[INFO] Convertendo para .sg -> $sg_path"
-    "$gapbs_dir/converter" -f "$el_path" -b "$sg_path"
-  fi
 }
 
 # Executa o parse dos argumentos
@@ -199,8 +224,12 @@ validate_required_params
 # Mostra os parâmetros parseados
 show_parsed_params
 
-# Cria as pastas de dados e logs (logs apenas se habilitado)
+# Cria as pastas de dados, resultados e logs (logs apenas se habilitado)
+results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/hyperthreading-$DISABLE_HYPERTHREADING"
+
 mkdir -p "$data_dir"
+mkdir -p "$results_dir"
+
 if [[ "$ENABLE_LOGS" == "true" ]]; then
   mkdir -p "$logs_root"
 fi
@@ -208,14 +237,18 @@ fi
 # Cria os dados do grafo
 get_graph_data
 
-# Executa kernel
-
+# Seta as variáveis do OpenMP
 export OMP_NUM_THREADS="$THREADS"
-cmd=( "$gapbs_dir/$KERNEL" -f "$sg_path" -i "$MAX_ITERS" -t "$TOLERANCE" )
+export OMP_THREAD_BIND_POLICY="$THREAD_BIND_POLICY"
+
+cmd=( "vtune -collect $ANALYSIS_TYPE -result-dir $results_dir" -- "$gapbs_dir/$KERNEL" -f "$el_path" -i "$MAX_ITERS" -t "$TOLERANCE" )
 
 echo "[INFO] Rodando: ${cmd[*]}"
+echo "[INFO] Variáveis de ambiente OpenMP:"
 echo "[INFO] OMP_NUM_THREADS=$OMP_NUM_THREADS"
+echo "[INFO] OMP_THREAD_BIND_POLICY=$OMP_THREAD_BIND_POLICY"
 
+exit 0
 if [[ "$ENABLE_LOGS" == "true" ]]; then
   ts="$(date +%Y%m%d-%H%M%S)"
   log="$logs_dir/${KERNEL}_${GRAPH_NAME}_t${THREADS}_${ts}.log"
@@ -225,3 +258,10 @@ else
   "${cmd[@]}"
   echo "[INFO] Execução concluída (logs desabilitados)"
 fi
+
+
+# Gera o relatório
+vtune -report summary \
+  -result-dir "$results_dir" \
+  -format csv \
+  -report-output "$results_dir/report.csv"

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Verifica se a pasta gapbs existe no diretório src
+# Se não existe, clona o repositório e compila
 if [ ! -d "src/gapbs" ]; then
     echo "Pasta gapbs não encontrada em src/. Clonando repositório..."
     cd src
@@ -22,11 +23,13 @@ else
 fi
 
 # Vtune
-# source /home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh
+source /home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh
 
+# Define o governor de performance para utilizar o máximo de frequência
+cpufreq-set -g performance
+
+# Gera os comandos
 python3 ./src/build_commad.py
-allCommands=$(cat commands.sh)
-echo $allCommands
 
 # Executa todos os comandos
 ./commands.sh

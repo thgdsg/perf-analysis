@@ -5,7 +5,7 @@
 
 import csv
 
-csv_file = "./csv/experiments.csv"
+csv_file = "./experiments.csv"
 
 def create_build_commands(csv_file):
     commands = []
@@ -15,12 +15,14 @@ def create_build_commands(csv_file):
         for row in reader:
             graph_name = row[header.index("GRAPH_NAME")]
             graph_url = row[header.index("GRAPH_URL")]
-            kernel = row[header.index("KERNEL")]
             threads = row[header.index("THREADS")]
             max_iters = row[header.index("MAX_ITERS")]
             tolerance = row[header.index("TOLERANCE")]
+            analysis_type = row[header.index("ANALYSIS_TYPE")]
+            disable_hyperthreading = row[header.index("DISABLE_HYPERTHREADING")].strip()
+            thread_bind_policy = row[header.index("THREAD_BIND_POLICY")].strip()
             logs_gapbs = row[header.index("LOGS_GAPBS")].strip()
-            command = f"./src/executa_bench.sh -graph-name {graph_name} -graph-url {graph_url} -kernel {kernel} -threads {threads} -max-iters {max_iters} -tolerance {tolerance}"
+            command = f"./src/executa_bench.sh -graph-name {graph_name} -graph-url {graph_url} -threads {threads} -max-iters {max_iters} -tolerance {tolerance} -analysis-type {analysis_type} -disable-hyperthreading {disable_hyperthreading} -thread-bind-policy {thread_bind_policy}"
 
             if logs_gapbs == 'true':
                 command += " -gap-logs"
@@ -34,7 +36,7 @@ if __name__ == "__main__":
     commands_formatted = ' && \n'.join(commands)
     
     # Cria arquivo com os comandos formatados
-    with open('commands.sh', 'w') as f:
+    with open('./src/commands.sh', 'w') as f:
         f.write(commands_formatted)
     
 
