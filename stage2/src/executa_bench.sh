@@ -224,6 +224,13 @@ validate_required_params
 # Mostra os parâmetros parseados
 show_parsed_params
 
+# Verifica se disable_hyperthreading é "true" e imprime "oi"
+if [[ "$DISABLE_HYPERTHREADING" == "true" ]]; then
+  echo "oi"
+else
+  echo "oi2"
+fi
+
 # Cria as pastas de dados, resultados e logs (logs apenas se habilitado)
 results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/hyperthreading-$DISABLE_HYPERTHREADING"
 
@@ -248,7 +255,6 @@ echo "[INFO] Variáveis de ambiente OpenMP:"
 echo "[INFO] OMP_NUM_THREADS=$OMP_NUM_THREADS"
 echo "[INFO] OMP_THREAD_BIND_POLICY=$OMP_THREAD_BIND_POLICY"
 
-exit 0
 if [[ "$ENABLE_LOGS" == "true" ]]; then
   ts="$(date +%Y%m%d-%H%M%S)"
   log="$logs_dir/${KERNEL}_${GRAPH_NAME}_t${THREADS}_${ts}.log"
