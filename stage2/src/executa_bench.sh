@@ -254,12 +254,6 @@ fi
 # Cria as pastas de dados, resultados e logs (logs apenas se habilitado)
 results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/hyperthreading-$DISABLE_HYPERTHREADING"
 
-# Remover toda a pasta "results" antes de executar (se existir)
-if [[ -d "./results" ]]; then
-  echo "[INFO] ./results já existe. Removendo."
-  rm -rf "./results"
-fi
-
 mkdir -p "$data_dir"
 mkdir -p "$results_dir"
 
