@@ -248,7 +248,7 @@ get_graph_data
 export OMP_NUM_THREADS="$THREADS"
 export OMP_THREAD_BIND_POLICY="$THREAD_BIND_POLICY"
 
-cmd=( "vtune -collect $ANALYSIS_TYPE -result-dir $results_dir" -- "$gapbs_dir/$KERNEL" -f "$el_path" -i "$MAX_ITERS" -t "$TOLERANCE" )
+cmd=( "vtune" "-collect" "$ANALYSIS_TYPE" "-result-dir" "$results_dir" "--" "$gapbs_dir/$KERNEL" "-f" "$el_path" "-i" "$MAX_ITERS" "-t" "$TOLERANCE" )
 
 echo "[INFO] Rodando: ${cmd[*]}"
 echo "[INFO] Variáveis de ambiente OpenMP:"
