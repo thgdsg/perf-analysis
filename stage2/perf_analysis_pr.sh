@@ -32,4 +32,4 @@ cpufreq-set -g performance
 python3 ./src/build_commad.py
 
 # Executa todos os comandos
-./commands.sh
+./src/commands.sh
