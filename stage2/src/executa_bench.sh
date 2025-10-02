@@ -110,7 +110,7 @@ parse_arguments() {
 get_graph_data() {
   # Pastas por grafo/kernel
   graph_dir="$data_dir/$GRAPH_NAME"
-  logs_dir="$logs_root/$GRAPH_NAME/$KERNEL/threads-$THREADS"
+  logs_dir="$logs_root/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/ht-$DISABLE_HYPERTHREADING/bind-$THREAD_BIND_POLICY/run-$RUN_ID"
   mkdir -p "$graph_dir"
   
   # Cria diretório de logs apenas se habilitado
@@ -217,7 +217,7 @@ echo "[INFO] GOMP_CPU_AFFINITY=${GOMP_CPU_AFFINITY:-'(não definido)'}"
 
 if [[ "$ENABLE_LOGS" == "true" ]]; then
   ts="$(date +%Y%m%d-%H%M%S)"
-  log="$logs_dir/${KERNEL}_${GRAPH_NAME}_t${THREADS}_${ts}.log"
+  log="$logs_root/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/ht-$DISABLE_HYPERTHREADING/bind-$THREAD_BIND_POLICY/run-$RUN_ID/${KERNEL}_${GRAPH_NAME}_t${THREADS}_${RUN_ID}_${ts}.log"
   "${cmd[@]}" 2>&1 | tee "$log"
   echo "[INFO] Log salvo em: $log"
 else
