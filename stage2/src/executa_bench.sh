@@ -28,6 +28,7 @@ GRAPH_NAME=""
 GRAPH_URL=""
 THREAD_BIND_POLICY=""
 DISABLE_HYPERTHREADING=""
+RUN_ID=1 # Valor padrão para o ID da execução
 
 # Função para mostrar ajuda
 show_help() {
@@ -41,6 +42,9 @@ show_help() {
     echo "  -graph-url URL    URL do grafo"
     echo "  -kernel KERNEL    Kernel a executar (obrigatório)"
     echo "  -gap-logs         Habilita criação de logs"
+    echo "  -thread-bind-policy POLICY  Política de bind (spread, close)"
+    echo "  -disable-hyperthreading true|false  Usa somente núcleos físicos"
+    echo "  -run-id ID        ID da execução (para criar pastas de resultado únicas)"
     echo "  -h, --help        Mostra esta ajuda"
 }
 
@@ -83,95 +87,24 @@ show_parsed_params() {
 
 # Função principal para parse dos argumentos
 parse_arguments() {
-    while [[ $# -gt 0 ]]; do
-        case $1 in
-            -threads)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -threads requer um valor"
-                    exit 1
-                fi
-                THREADS="$2"
-                shift 2
-                ;;
-            -max-iters)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -max-iters requer um valor"
-                    exit 1
-                fi
-                MAX_ITERS="$2"
-                shift 2
-                ;;
-            -tolerance)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -tolerance requer um valor"
-                    exit 1
-                fi
-                TOLERANCE="$2"
-                shift 2
-                ;;
-            -graph-name)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -graph-name requer um valor"
-                    exit 1
-                fi
-                GRAPH_NAME="$2"
-                shift 2
-                ;;
-            -graph-url)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -graph-url requer um valor"
-                    exit 1
-                fi
-                GRAPH_URL="$2"
-                shift 2
-                ;;
-            -kernel)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -kernel requer um valor"
-                    exit 1
-                fi
-                KERNEL="$2"
-                shift 2
-                ;;
-            -analysis-type)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -analysis-type requer um valor"
-                    exit 1
-                fi
-                ANALYSIS_TYPE="$2"
-                shift 2
-                ;;
-            -gap-logs)
-                ENABLE_LOGS=true
-                shift
-                ;;
-            -thread-bind-policy)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -thread-bind-policy requer um valor"
-                    exit 1
-                fi
-                THREAD_BIND_POLICY="$2"
-                shift 2
-                ;;
-            -disable-hyperthreading)
-                if [[ -z "$2" || "$2" =~ ^- ]]; then
-                    echo "Erro: -disable-hyperthreading requer um valor"
-                    exit 1
-                fi
-                DISABLE_HYPERTHREADING="$2"
-                shift 2
-                ;;
-            -h|--help)
-                show_help
-                exit 0
-                ;;
-            *)
-                echo "Parâmetro desconhecido: $1"
-                echo "Use -h ou --help para ver as opções disponíveis"
-                exit 1
-                ;;
-        esac
-    done
+  while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+      -threads) THREADS="$2"; shift ;;
+      -max-iters) MAX_ITERS="$2"; shift ;;
+      -tolerance) TOLERANCE="$2"; shift ;;
+      -graph-name) GRAPH_NAME="$2"; shift ;;
+      -graph-url) GRAPH_URL="$2"; shift ;;
+      -kernel) KERNEL="$2"; shift ;;
+      -analysis-type) ANALYSIS_TYPE="$2"; shift ;;
+      -gap-logs) ENABLE_LOGS=true ;;
+      -thread-bind-policy) THREAD_BIND_POLICY="$2"; shift ;;
+      -disable-hyperthreading) DISABLE_HYPERTHREADING="$2"; shift ;;
+      -run-id) RUN_ID="$2"; shift ;;
+      -h|--help) show_help; exit 0 ;;
+      *) echo "Opção desconhecida: $1"; show_help; exit 1 ;;
+    esac
+    shift
+  done
 }
 
 get_graph_data() {
@@ -229,7 +162,6 @@ if [[ "$DISABLE_HYPERTHREADING" == "true" ]]; then
 
   # OpenMP: usa apenas núcleos físicos (1 thread por core)
   export OMP_PLACES=cores
-  export OMP_PROC_BIND=close
 
   # libgomp: fixa 1 logical por core (primeiro irmão de cada core)
   export GOMP_CPU_AFFINITY="$(
@@ -238,7 +170,6 @@ if [[ "$DISABLE_HYPERTHREADING" == "true" ]]; then
   )"
 else
   export OMP_PLACES=threads
-  export OMP_PROC_BIND=close
 
   # libgomp: liste primeiro 1 logical por core, depois os hyperthreads (mantém bom escalonamento com N<44)
   export GOMP_CPU_AFFINITY="$(
@@ -251,8 +182,15 @@ else
   )"
 fi
 
-# Cria as pastas de dados, resultados e logs (logs apenas se habilitado)
-results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/hyperthreading-$DISABLE_HYPERTHREADING"
+# Cria as pastas de dados, resultados e logs
+# A estrutura agora inclui a política de bind e o ID da execução
+results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/ht-$DISABLE_HYPERTHREADING/bind-$THREAD_BIND_POLICY/run-$RUN_ID"
+
+# Remover a pasta de resultados específica desta execução se ela já existir
+if [[ -d "$results_dir" ]]; then
+  echo "[INFO] Removendo pasta de resultados existente: $results_dir"
+  rm -rf "$results_dir"
+fi
 
 mkdir -p "$data_dir"
 mkdir -p "$results_dir"
@@ -266,7 +204,7 @@ get_graph_data
 
 # Seta as variáveis do OpenMP
 export OMP_NUM_THREADS="$THREADS"
-export OMP_THREAD_BIND_POLICY="$THREAD_BIND_POLICY"
+export OMP_PROC_BIND="$THREAD_BIND_POLICY"
 
 cmd=( "vtune" "-collect" "$ANALYSIS_TYPE" "-result-dir" "$results_dir" "--" "$gapbs_dir/$KERNEL" "-f" "$el_path" "-i" "$MAX_ITERS" "-t" "$TOLERANCE" )
 
@@ -276,7 +214,6 @@ echo "[INFO] OMP_NUM_THREADS=$OMP_NUM_THREADS"
 echo "[INFO] OMP_PLACES=${OMP_PLACES:-'(não definido)'}"
 echo "[INFO] OMP_PROC_BIND=${OMP_PROC_BIND:-'(não definido)'}"
 echo "[INFO] GOMP_CPU_AFFINITY=${GOMP_CPU_AFFINITY:-'(não definido)'}"
-echo "[INFO] OMP_THREAD_BIND_POLICY=$OMP_THREAD_BIND_POLICY"
 
 if [[ "$ENABLE_LOGS" == "true" ]]; then
   ts="$(date +%Y%m%d-%H%M%S)"

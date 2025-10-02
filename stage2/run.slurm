@@ -18,6 +18,8 @@
 
 set -euo pipefail
 
+HOME_DIR="${HOME}/perf-analysis/stage2"
+
 # Define o diretório do projeto no SCRATCH, com fallback para o diretório do script
 if [[ -n "${SCRATCH:-}" ]]; then
   PROJECT_DIR="${SCRATCH}/perf-analysis/stage2"
@@ -30,6 +32,11 @@ else
   PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 fi
 cd "$PROJECT_DIR"
+
+# Coloca o governor DVFS em performance pra todos os cores
+for i in $(seq 0 $(( $(nproc) - 1 ))); do
+    cpufreq-set -c $i -g performance
+done
 
 echo "[INFO] Iniciando job em: $(pwd)"
 echo "[INFO] Hostname: $(hostname)"
@@ -44,5 +51,7 @@ chmod +x ./perf_analysis_pr.sh || true
 
 # Delegar toda a orquestração ao script principal do projeto
 ./perf_analysis_pr.sh
+
+cp -r "$PROJECT_DIR"/results "$HOME_DIR"/results
 
 echo "[INFO] Job finalizado com sucesso."
