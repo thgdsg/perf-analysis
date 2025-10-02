@@ -18,19 +18,31 @@
 
 set -euo pipefail
 
-HOME_DIR="${HOME}/perf-analysis/stage2"
-
-# Define o diretório do projeto no SCRATCH, com fallback para o diretório do script
-if [[ -n "${SCRATCH:-}" ]]; then
-  PROJECT_DIR="${SCRATCH}/perf-analysis/stage2"
-  if [[ ! -d "$PROJECT_DIR" ]]; then
-    echo "[WARN] Diretório não existe em SCRATCH: $PROJECT_DIR. Usando diretório do script."
-    PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
-  fi
-else
-  echo "[WARN] SCRATCH não definido. Usando diretório do script."
-  PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# Verifica se a variável SCRATCH está definida
+if [[ -z "${SCRATCH:-}" ]]; then
+  echo "[ERRO] A variável de ambiente SCRATCH não está definida. Abortando." >&2
+  exit 1
 fi
+
+# Diretório de destino para os resultados no HOME
+HOME_RESULTS_DIR="${HOME}/perf-analysis/stage2"
+
+# Diretório do repositório no SCRATCH
+REPO_DIR_IN_SCRATCH="${SCRATCH}/perf-analysis"
+
+# Remove o diretório do repositório se ele já existir para garantir uma cópia limpa
+if [[ -d "$REPO_DIR_IN_SCRATCH" ]]; then
+  echo "[INFO] Removendo diretório existente: $REPO_DIR_IN_SCRATCH"
+  rm -rf "$REPO_DIR_IN_SCRATCH"
+fi
+
+# Navega para o diretório SCRATCH e clona o repositório
+echo "[INFO] Navegando para $SCRATCH e clonando o repositório..."
+cd "$SCRATCH"
+git clone https://github.com/thgdsg/perf-analysis.git
+
+# Define o diretório de trabalho do projeto e entra nele
+PROJECT_DIR="${REPO_DIR_IN_SCRATCH}/stage2"
 cd "$PROJECT_DIR"
 
 # Coloca o governor DVFS em performance pra todos os cores
@@ -52,6 +64,9 @@ chmod +x ./perf_analysis_pr.sh || true
 # Delegar toda a orquestração ao script principal do projeto
 ./perf_analysis_pr.sh
 
-cp -r "$PROJECT_DIR"/results "$HOME_DIR"/results
+# Cria o diretório de resultados no HOME se não existir e copia os resultados
+echo "[INFO] Copiando resultados de $PROJECT_DIR/results para $HOME_RESULTS_DIR"
+mkdir -p "$HOME_RESULTS_DIR"
+cp -r "$PROJECT_DIR"/results "$HOME_RESULTS_DIR"/
 
 echo "[INFO] Job finalizado com sucesso."
