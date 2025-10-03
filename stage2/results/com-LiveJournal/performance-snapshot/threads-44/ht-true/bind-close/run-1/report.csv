@@ -1,0 +1,62 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	0.316633
+1	IPC	0.712695
+1	SP GFLOPS	1.082394
+1	DP GFLOPS	0.046326
+1	x87 GFLOPS	0.007862
+1	Average CPU Frequency	2803138334.782467
+0	Effective Logical Core Utilization	26.5% (23.313 out of 88)
+1	Effective Physical Core Utilization	53.0% (23.303 out of 44)
+0	Microarchitecture Usage	20.3
+1	Retiring	20.3
+1	Front-End Bound	2.5
+1	Back-End Bound	70.2
+2	Memory Bound	44.9
+2	Core Bound	25.3
+1	Bad Speculation	7.1
+0	Memory Bound	44.9
+1	L1 Bound	3.7
+1	L2 Bound	28.1
+1	L3 Bound	4.0
+1	DRAM Bound	9.4
+2	DRAM Bandwidth Bound	0.0
+1	Store Bound	11.6
+1	NUMA: % of Remote Accesses	40.9
+0	Vectorization	0.0
+1	Instruction Mix	
+2	SP FLOPs	2.0
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	DP FLOPs	0.1
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	x87 FLOPs	0.0
+2	Non-FP	97.9
+1	FP Arith/Mem Rd Instr. Ratio	0.104737
+1	FP Arith/Mem Wr Instr. Ratio	0.269947
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-LiveJournal/com-LiveJournal.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	3619246
+1	Collection start time	07:49:02 03/10/2025 UTC
+1	Collection stop time	07:49:03 03/10/2025 UTC
+1	Collector Type	Driverless Perf per-process counting
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199990176
+2	Logical CPU Count	88
+2	Max DRAM Single-Package Bandwidth	75000000000.000000
+2	Cache Allocation Technology	
+3	Level 2 capability	not detected
+3	Level 3 capability	available
+0	Recommendations:
+1	Increase execution time	 	Application execution time is too short. Metrics data may be unreliable. Consider reducing the sampling interval or increasing your application execution time.
+1	Hotspots	Start with Hotspots analysis to understand the efficiency of your algorithm.	Use Hotspots analysis to identify the most time consuming functions. Drill down to see the time spent on every line of code.
+1	Threading	There is poor utilization of logical CPU cores (26.5%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
+1	Microarchitecture Exploration	There is low microarchitecture usage (20.3%) of available hardware resources. 	Run Microarchitecture Exploration analysis to analyze CPU microarchitecture bottlenecks that can affect application performance.
+1	Memory Access	The Memory Bound metric is high  (44.9%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.

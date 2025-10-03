@@ -1,0 +1,49 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	7.318789
+1	SP GFLOPS	3.497852
+1	DP GFLOPS	0.956444
+1	x87 GFLOPS	0.0
+1	CPI Rate	2.363265
+1	Average CPU Frequency	2806975278.781831
+1	Total Thread Count	44
+0	Effective Physical Core Utilization	37.8% (16.649 out of 44)
+1	Effective Logical Core Utilization	37.3% (32.848 out of 88)
+0	Memory Bound	39.8
+1	Cache Bound	48.7
+1	DRAM Bound	4.4
+2	DRAM Bandwidth Bound	1.0
+1	NUMA: % of Remote Accesses	45.8
+1	Bandwidth Utilization	
+1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
+1	DRAM, GB/sec	194.000000	133.700000	49.554646	0.0
+1	DRAM Single-Package, GB/sec	97.000000	78.500000	29.234345	1.0
+1	QPI Outgoing, GB/sec	68.000000	74.700000	25.053325	9.0
+0	Vectorization	0.0
+1	Instruction Mix	
+2	SP FLOPs	7.3
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	DP FLOPs	2.0
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	x87 FLOPs	0.0
+2	Non-FP	90.7
+1	FP Arith/Mem Rd Instr. Ratio	0.536964
+1	FP Arith/Mem Wr Instr. Ratio	1.304485
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	68157980
+1	Collection start time	06:48:50 03/10/2025 UTC
+1	Collection stop time	06:48:58 03/10/2025 UTC
+1	Collector Type	Driverless Perf per-process sampling
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199989981
+2	Logical CPU Count	88
+2	Max DRAM Single-Package Bandwidth	97000000000.000000

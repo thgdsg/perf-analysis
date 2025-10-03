@@ -1,0 +1,49 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	0.621006
+1	SP GFLOPS	0.0
+1	DP GFLOPS	0.0
+1	x87 GFLOPS	0.0
+1	CPI Rate	1.915706
+1	Average CPU Frequency	2856334527.437500
+1	Total Thread Count	44
+0	Effective Physical Core Utilization	36.9% (16.234 out of 44)
+1	Effective Logical Core Utilization	18.7% (16.489 out of 88)
+0	Memory Bound	39.7
+1	Cache Bound	48.2
+1	DRAM Bound	0.0
+2	DRAM Bandwidth Bound	25.8
+1	NUMA: % of Remote Accesses	0.0
+1	Bandwidth Utilization	
+1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
+1	DRAM, GB/sec	140.000000	60.400000	20.434584	0.0
+1	DRAM Single-Package, GB/sec	70.000000	60.200000	20.321864	25.8
+1	QPI Outgoing, GB/sec	68.000000	38.600000	12.882322	0.0
+0	Vectorization	0.0
+1	Instruction Mix	
+2	SP FLOPs	0.0
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	0.0
+2	DP FLOPs	0.0
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	0.0
+2	x87 FLOPs	0.0
+2	Non-FP	100.0
+1	FP Arith/Mem Rd Instr. Ratio	0.0
+1	FP Arith/Mem Wr Instr. Ratio	0.0
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-LiveJournal/com-LiveJournal.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	8644678
+1	Collection start time	23:50:32 02/10/2025 UTC
+1	Collection stop time	23:50:33 02/10/2025 UTC
+1	Collector Type	Driverless Perf per-process sampling
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199989888
+2	Logical CPU Count	88
+2	Max DRAM Single-Package Bandwidth	70000000000.000000

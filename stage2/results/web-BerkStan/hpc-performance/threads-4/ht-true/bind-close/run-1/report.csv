@@ -1,0 +1,49 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	2.657225
+1	SP GFLOPS	2.032199
+1	DP GFLOPS	0.0
+1	x87 GFLOPS	0.0
+1	CPI Rate	0.570478
+1	Average CPU Frequency	3337399801.986394
+1	Total Thread Count	4
+0	Effective Physical Core Utilization	6.2% (2.741 out of 44)
+1	Effective Logical Core Utilization	3.1% (2.766 out of 88)
+0	Memory Bound	16.2
+1	Cache Bound	20.0
+1	DRAM Bound	0.0
+2	DRAM Bandwidth Bound	0.0
+1	NUMA: % of Remote Accesses	0.0
+1	Bandwidth Utilization	
+1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
+1	DRAM, GB/sec	140.000000	7.200000	1.919296	0.0
+1	DRAM Single-Package, GB/sec	70.000000	7.100000	1.384904	0.0
+1	QPI Outgoing, GB/sec	68.000000	2.400000	0.015053	0.0
+0	Vectorization	0.0
+1	Instruction Mix	
+2	SP FLOPs	13.4
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	DP FLOPs	0.0
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	0.0
+2	x87 FLOPs	0.0
+2	Non-FP	86.6
+1	FP Arith/Mem Rd Instr. Ratio	0.375641
+1	FP Arith/Mem Wr Instr. Ratio	2.352874
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-BerkStan/web-BerkStan.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	10434876
+1	Collection start time	01:23:05 03/10/2025 UTC
+1	Collection stop time	01:23:08 03/10/2025 UTC
+1	Collector Type	Driverless Perf per-process sampling
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199990004
+2	Logical CPU Count	88
+2	Max DRAM Single-Package Bandwidth	70000000000.000000
