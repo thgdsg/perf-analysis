@@ -1,2 +1,9 @@
 stage2/data/
 stage2/src/gapbs/
+stage2/results/*/*/*/*/*/*/archive
+stage2/results/*/*/*/*/*/*/config
+stage2/results/*/*/*/*/*/*/data.0
+stage2/results/*/*/*/*/*/*/log
+stage2/results/*/*/*/*/*/*/*.vtune
+stage2/results/*/*/*/*/*/*/sqlite-db
+stage2/results/*/*/*/*/*/*/.norun
