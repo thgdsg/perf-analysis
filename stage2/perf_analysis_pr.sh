@@ -23,10 +23,10 @@ else
 fi
 
 # Remover toda a pasta "results" antes de executar (se existir)
-if [[ -d "./results" ]]; then
-  echo "[INFO] ./results já existe. Removendo."
-  rm -rf "./results"
-fi
+#if [[ -d "./results" ]]; then
+#  echo "[INFO] ./results já existe. Removendo."
+#  rm -rf "./results"
+#fi
 
 # Vtune
 source /home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh
