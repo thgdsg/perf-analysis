@@ -112,6 +112,12 @@ get_graph_data() {
   graph_dir="$data_dir/$GRAPH_NAME"
   logs_dir="$logs_root/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/ht-$DISABLE_HYPERTHREADING/bind-$THREAD_BIND_POLICY/run-$RUN_ID"
   mkdir -p "$graph_dir"
+
+  # Remover a pasta de logs específica desta execução se ela já existir
+  if [[ -d "$logs_dir" ]]; then
+    echo "[INFO] Removendo pasta de logs existente: $logs_dir"
+    rm -rf "$logs_dir"
+  fi
   
   # Cria diretório de logs apenas se habilitado
   if [[ "$ENABLE_LOGS" == "true" ]]; then
@@ -196,12 +202,6 @@ results_dir="./results/$GRAPH_NAME/$ANALYSIS_TYPE/threads-$THREADS/ht-$DISABLE_H
 if [[ -d "$results_dir" ]]; then
   echo "[INFO] Removendo pasta de resultados existente: $results_dir"
   rm -rf "$results_dir"
-fi
-
-# Remover a pasta de logs específica desta execução se ela já existir
-if [[ -d "$logs_dir" ]]; then
-  echo "[INFO] Removendo pasta de logs existente: $logs_dir"
-  rm -rf "$logs_dir"
 fi
 
 mkdir -p "$data_dir"
