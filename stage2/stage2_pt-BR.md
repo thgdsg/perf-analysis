@@ -32,3 +32,7 @@ Quanto ao Intel VTune, pretendemos utilizar os seguintes tipos de análise dispo
     - Quando usar: apps paralelas (muitos threads ou MPI). Mesmo em 1 CPU, útil para saber se o kernel está memory-bound e o nível de vetor/IPC.
     - Overhead: moderado; usa mais contadores de HW.
     - Saída: resumo HPC, roofline, breakdown compute vs memory bound, métricas de paralelismo (OpenMP/MPI).
+
+
+# Pyvenv
+-> source venv/bin/activate
