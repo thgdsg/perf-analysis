@@ -1,11 +1,11 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	8.119448
-1	CPU Time	557.180000
-2	Effective Time	557.180000
-3	Idle	0.040000
-3	Poor	40.475591
-3	Ok	128.180311
-3	Ideal	388.484098
+0	Elapsed Time	8.320435
+1	CPU Time	286.380000
+2	Effective Time	286.380000
+3	Idle	0.030000
+3	Poor	286.350000
+3	Ok	0.0
+3	Ideal	0.0
 3	Over	0.0
 2	Spin Time	0.0
 2	Overhead Time	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	418.241905
-0	PageRankPullGS._omp_fn.0	pr	42.622036
-0	pvector<float>::fill._omp_fn.2	pr	32.921544
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	20.009038
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	15.536905
-0	[Others]	N/A	27.848571
-0	Effective Physical Core Utilization	78.3% (34.453 out of 44)
-1	Effective Logical Core Utilization	77.8% (68.498 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	234.489427
+0	PageRankPullGS._omp_fn.0	pr	21.709223
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	11.181383
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	9.580000
+0	pvector<float>::fill._omp_fn.2	pr	3.900000
+0	[Others]	N/A	5.519966
+0	Effective Physical Core Utilization	78.4% (34.501 out of 44)
+1	Effective Logical Core Utilization	39.2% (34.511 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	15112547
-1	Collection start time	07:04:23 03/10/2025 UTC
-1	Collection stop time	07:04:31 03/10/2025 UTC
+1	Result Size	9741160
+1	Collection start time	03:48:03 05/10/2025 UTC
+1	Collection stop time	03:48:11 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989951
+2	Frequency	2199989985
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

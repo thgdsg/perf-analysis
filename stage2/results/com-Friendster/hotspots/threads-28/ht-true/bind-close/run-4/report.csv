@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	6.780839
-1	CPU Time	141.380000
-2	Effective Time	141.380000
-3	Idle	0.040000
-3	Poor	141.340000
+0	Elapsed Time	6.987115
+1	CPU Time	154.210000
+2	Effective Time	154.210000
+3	Idle	0.030000
+3	Poor	154.180000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	93.986104
-0	PageRankPullGS._omp_fn.0	pr	15.665398
-0	pvector<float>::fill._omp_fn.2	pr	10.354545
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	6.333796
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	5.820904
-0	[Others]	N/A	9.219252
-0	Effective Physical Core Utilization	47.6% (20.926 out of 44)
-1	Effective Logical Core Utilization	23.8% (20.932 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	118.535765
+0	PageRankPullGS._omp_fn.0	pr	12.428465
+0	pvector<float>::fill._omp_fn.2	pr	5.395569
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	5.138096
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	4.485301
+0	[Others]	N/A	8.226805
+0	Effective Physical Core Utilization	50.2% (22.095 out of 44)
+1	Effective Logical Core Utilization	25.1% (22.099 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	6578210
-1	Collection start time	06:23:16 03/10/2025 UTC
-1	Collection stop time	06:23:22 03/10/2025 UTC
+1	Result Size	6799494
+1	Collection start time	03:27:27 05/10/2025 UTC
+1	Collection stop time	03:27:34 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989968
+2	Frequency	2199989979
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

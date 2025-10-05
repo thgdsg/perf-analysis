@@ -1,62 +1,61 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.351628
-1	IPC	0.435387
-1	SP GFLOPS	3.171849
-1	DP GFLOPS	0.740188
-1	x87 GFLOPS	0.008530
-1	Average CPU Frequency	2799029419.230306
-0	Effective Logical Core Utilization	52.2% (45.895 out of 88)
-1	Effective Physical Core Utilization	52.9% (23.287 out of 44)
-0	Microarchitecture Usage	30.0
-1	Retiring	30.0
-1	Front-End Bound	12.7
-1	Back-End Bound	56.7
-2	Memory Bound	30.1
-2	Core Bound	26.6
-1	Bad Speculation	0.5
-0	Memory Bound	30.1
-1	L1 Bound	0.0
-1	L2 Bound	32.7
-1	L3 Bound	1.9
-1	DRAM Bound	4.7
+0	Elapsed Time	0.350658
+1	IPC	0.765605
+1	SP GFLOPS	3.120343
+1	DP GFLOPS	1.296289
+1	x87 GFLOPS	0.007992
+1	Average CPU Frequency	2794258808.052985
+0	Effective Logical Core Utilization	18.9% (16.624 out of 88)
+1	Effective Physical Core Utilization	37.9% (16.687 out of 44)
+0	Microarchitecture Usage	16.3
+1	Retiring	16.3
+1	Front-End Bound	3.0
+1	Back-End Bound	70.8
+2	Memory Bound	55.2
+2	Core Bound	15.6
+1	Bad Speculation	9.9
+0	Memory Bound	55.2
+1	L1 Bound	6.0
+1	L2 Bound	19.4
+1	L3 Bound	9.7
+1	DRAM Bound	21.3
 2	DRAM Bandwidth Bound	0.0
-1	Store Bound	15.6
-1	NUMA: % of Remote Accesses	40.2
+1	Store Bound	13.2
+1	NUMA: % of Remote Accesses	25.9
 0	Vectorization	0.0
 1	Instruction Mix	
-2	SP FLOPs	4.0
+2	SP FLOPs	10.3
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
-2	DP FLOPs	0.9
+2	DP FLOPs	4.3
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
 2	x87 FLOPs	0.0
-2	Non-FP	95.0
-1	FP Arith/Mem Rd Instr. Ratio	0.321648
-1	FP Arith/Mem Wr Instr. Ratio	0.890757
+2	Non-FP	85.4
+1	FP Arith/Mem Rd Instr. Ratio	0.510554
+1	FP Arith/Mem Wr Instr. Ratio	1.195278
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-LiveJournal/com-LiveJournal.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3619269
-1	Collection start time	08:01:37 03/10/2025 UTC
-1	Collection stop time	08:01:38 03/10/2025 UTC
+1	Result Size	3618184
+1	Collection start time	04:15:30 05/10/2025 UTC
+1	Collection stop time	04:15:30 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990262
+2	Frequency	2199989755
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	70000000000.000000
+2	Max DRAM Single-Package Bandwidth	83000000000.000000
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected
 3	Level 3 capability	available
 0	Recommendations:
 1	Increase execution time	 	Application execution time is too short. Metrics data may be unreliable. Consider reducing the sampling interval or increasing your application execution time.
 1	Hotspots	Start with Hotspots analysis to understand the efficiency of your algorithm.	Use Hotspots analysis to identify the most time consuming functions. Drill down to see the time spent on every line of code.
-1	Microarchitecture Exploration	There is low microarchitecture usage (30.0%) of available hardware resources. 	Run Microarchitecture Exploration analysis to analyze CPU microarchitecture bottlenecks that can affect application performance.
-1	Threading	There is poor utilization of logical CPU cores (52.2%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
-1	Memory Access	The Memory Bound metric is high  (30.1%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
+1	Memory Access	The Memory Bound metric is high  (55.2%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
+1	Threading	There is poor utilization of logical CPU cores (18.9%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.

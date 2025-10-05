@@ -1,23 +1,23 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.946268
+0	Elapsed Time	0.915734
 1	SP GFLOPS	0.0
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	1.650958
-1	Average CPU Frequency	2820955056.556451
+1	CPI Rate	1.666534
+1	Average CPU Frequency	2826058722.430233
 1	Total Thread Count	44
-0	Effective Physical Core Utilization	38.2% (16.812 out of 44)
-1	Effective Logical Core Utilization	19.4% (17.035 out of 88)
-0	Memory Bound	19.8
-1	Cache Bound	30.3
+0	Effective Physical Core Utilization	41.1% (18.064 out of 44)
+1	Effective Logical Core Utilization	20.3% (17.844 out of 88)
+0	Memory Bound	16.8
+1	Cache Bound	22.7
 1	DRAM Bound	0.0
 2	DRAM Bandwidth Bound	0.0
-1	NUMA: % of Remote Accesses	100.0
+1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	140.000000	24.500000	6.435808	0.0
-1	DRAM Single-Package, GB/sec	70.000000	14.800000	5.727763	0.0
-1	QPI Outgoing, GB/sec	68.000000	16.800000	4.776659	0.0
+1	DRAM, GB/sec	166.000000	23.200000	6.770522	0.0
+1	DRAM Single-Package, GB/sec	83.000000	19.300000	5.896906	0.0
+1	QPI Outgoing, GB/sec	68.000000	14.700000	3.800228	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	0.0
@@ -38,12 +38,12 @@ Hierarchy Level	Metric Name	Metric Value
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	9918075
-1	Collection start time	03:53:17 03/10/2025 UTC
-1	Collection stop time	03:53:18 03/10/2025 UTC
+1	Result Size	9855129
+1	Collection start time	02:17:39 05/10/2025 UTC
+1	Collection stop time	02:17:40 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990107
+2	Frequency	2199990449
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	70000000000.000000
+2	Max DRAM Single-Package Bandwidth	83000000000.000000

@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	3.644173
-1	CPU Time	17.009992
-2	Effective Time	17.009992
+0	Elapsed Time	3.191373
+1	CPU Time	12.609997
+2	Effective Time	12.609997
 3	Idle	0.0
-3	Poor	17.009992
+3	Poor	12.609997
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	9.619058
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	2.497981
-0	std::istream::operator>>	libstdc++.so.6	2.011864
-0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.615987
-0	func@0x18e20	libgomp.so.1	0.590014
-0	[Others]	N/A	1.675088
-0	Effective Physical Core Utilization	10.7% (4.701 out of 44)
-1	Effective Logical Core Utilization	5.3% (4.705 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	6.621632
+0	std::istream::operator>>	libstdc++.so.6	1.967613
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	1.585459
+0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.688019
+0	BuilderBase<int, int, int, (bool)1>::SquishCSR._omp_fn.15	pr	0.461949
+0	[Others]	N/A	1.285325
+0	Effective Physical Core Utilization	9.1% (3.997 out of 44)
+1	Effective Logical Core Utilization	4.5% (3.997 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Orkut/com-Orkut.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4178312
-1	Collection start time	04:30:08 03/10/2025 UTC
-1	Collection stop time	04:30:12 03/10/2025 UTC
+1	Result Size	4046575
+1	Collection start time	02:35:10 05/10/2025 UTC
+1	Collection stop time	02:35:13 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990010
+2	Frequency	2199989912
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

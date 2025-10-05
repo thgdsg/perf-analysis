@@ -1,27 +1,27 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	3.377468
-1	IPC	1.139548
-1	SP GFLOPS	0.515624
-1	DP GFLOPS	0.044160
-1	x87 GFLOPS	0.001404
-1	Average CPU Frequency	3598192518.651113
-0	Effective Logical Core Utilization	1.1% (0.982 out of 88)
-1	Effective Physical Core Utilization	2.2% (0.982 out of 44)
+0	Elapsed Time	3.381856
+1	IPC	1.140553
+1	SP GFLOPS	0.514347
+1	DP GFLOPS	0.043902
+1	x87 GFLOPS	0.001376
+1	Average CPU Frequency	3597807575.753960
+0	Effective Logical Core Utilization	1.1% (0.980 out of 88)
+1	Effective Physical Core Utilization	2.2% (0.980 out of 44)
 0	Microarchitecture Usage	26.0
 1	Retiring	26.0
 1	Front-End Bound	8.7
 1	Back-End Bound	50.1
 2	Memory Bound	32.2
-2	Core Bound	17.8
+2	Core Bound	17.9
 1	Bad Speculation	15.2
 0	Memory Bound	32.2
-1	L1 Bound	3.8
-1	L2 Bound	0.1
-1	L3 Bound	37.1
+1	L1 Bound	3.7
+1	L2 Bound	0.0
+1	L3 Bound	37.3
 1	DRAM Bound	0.1
 2	DRAM Bandwidth Bound	0.0
-1	Store Bound	0.5
-1	NUMA: % of Remote Accesses	62.2
+1	Store Bound	0.4
+1	NUMA: % of Remote Accesses	54.6
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	14.0
@@ -36,21 +36,21 @@ Hierarchy Level	Metric Name	Metric Value
 3	Scalar	100.0
 2	x87 FLOPs	0.0
 2	Non-FP	84.7
-1	FP Arith/Mem Rd Instr. Ratio	0.440321
-1	FP Arith/Mem Wr Instr. Ratio	2.608376
+1	FP Arith/Mem Rd Instr. Ratio	0.438986
+1	FP Arith/Mem Wr Instr. Ratio	2.586870
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3642786
-1	Collection start time	19:33:02 02/10/2025 UTC
-1	Collection stop time	19:33:06 02/10/2025 UTC
+1	Result Size	3642794
+1	Collection start time	22:00:04 04/10/2025 UTC
+1	Collection stop time	22:00:07 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989954
+2	Frequency	2199989956
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	89000000000.000000
+2	Max DRAM Single-Package Bandwidth	80000000000.000000
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected
 3	Level 3 capability	available

@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	3.400005
-1	CPU Time	15.139986
-2	Effective Time	15.139986
-3	Idle	0.0
-3	Poor	15.139986
+0	Elapsed Time	3.450567
+1	CPU Time	15.149994
+2	Effective Time	15.149994
+3	Idle	0.010000
+3	Poor	15.139994
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	7.786419
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	2.503839
-0	std::istream::operator>>	libstdc++.so.6	1.999775
-0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	1.152191
-0	BuilderBase<int, int, int, (bool)1>::SquishCSR._omp_fn.15	pr	0.417927
-0	[Others]	N/A	1.279835
-0	Effective Physical Core Utilization	10.2% (4.476 out of 44)
-1	Effective Logical Core Utilization	5.1% (4.477 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	7.497893
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	2.937815
+0	std::istream::operator>>	libstdc++.so.6	1.965909
+0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	1.146026
+0	BuilderBase<int, int, int, (bool)1>::SquishCSR._omp_fn.15	pr	0.385999
+0	[Others]	N/A	1.216352
+0	Effective Physical Core Utilization	10.1% (4.430 out of 44)
+1	Effective Logical Core Utilization	5.0% (4.432 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Orkut/com-Orkut.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4111839
-1	Collection start time	20:47:11 02/10/2025 UTC
-1	Collection stop time	20:47:14 02/10/2025 UTC
+1	Result Size	4120814
+1	Collection start time	22:39:56 04/10/2025 UTC
+1	Collection stop time	22:40:00 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989933
+2	Frequency	2199989962
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

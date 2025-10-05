@@ -1,23 +1,23 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.510829
+0	Elapsed Time	0.568065
 1	SP GFLOPS	0.0
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	1.049788
-1	Average CPU Frequency	2876240068.695251
+1	CPI Rate	1.056663
+1	Average CPU Frequency	2877129683.751948
 1	Total Thread Count	22
-0	Effective Physical Core Utilization	16.9% (7.419 out of 44)
-1	Effective Logical Core Utilization	8.4% (7.419 out of 88)
-0	Memory Bound	22.9
-1	Cache Bound	23.9
-1	DRAM Bound	1.8
+0	Effective Physical Core Utilization	15.1% (6.631 out of 44)
+1	Effective Logical Core Utilization	7.7% (6.777 out of 88)
+0	Memory Bound	16.6
+1	Cache Bound	18.1
+1	DRAM Bound	0.9
 2	DRAM Bandwidth Bound	0.0
 1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	176.000000	17.700000	4.541637	0.0
-1	DRAM Single-Package, GB/sec	88.000000	15.300000	4.032660	0.0
-1	QPI Outgoing, GB/sec	68.000000	11.000000	2.975555	0.0
+1	DRAM, GB/sec	168.000000	17.900000	5.421917	0.0
+1	DRAM Single-Package, GB/sec	84.000000	15.400000	5.034637	0.0
+1	QPI Outgoing, GB/sec	68.000000	11.300000	3.731969	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	0.0
@@ -38,12 +38,12 @@ Hierarchy Level	Metric Name	Metric Value
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-NotreDame/web-NotreDame.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	6510506
-1	Collection start time	19:02:44 02/10/2025 UTC
-1	Collection stop time	19:02:44 02/10/2025 UTC
+1	Result Size	6382688
+1	Collection start time	21:43:56 04/10/2025 UTC
+1	Collection stop time	21:43:56 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989881
+2	Frequency	2199989927
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	88000000000.000000
+2	Max DRAM Single-Package Bandwidth	84000000000.000000

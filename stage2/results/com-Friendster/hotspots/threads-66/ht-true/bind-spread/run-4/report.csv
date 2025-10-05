@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	7.616685
-1	CPU Time	406.970000
-2	Effective Time	406.970000
+0	Elapsed Time	8.251453
+1	CPU Time	281.060000
+2	Effective Time	281.060000
 3	Idle	0.030000
-3	Poor	406.940000
+3	Poor	281.030000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	313.067418
-0	PageRankPullGS._omp_fn.0	pr	39.527529
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	14.875177
-0	pvector<float>::fill._omp_fn.2	pr	11.716943
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	6.665137
-0	[Others]	N/A	21.117795
-0	Effective Physical Core Utilization	79.7% (35.083 out of 44)
-1	Effective Logical Core Utilization	60.7% (53.387 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	233.116635
+0	PageRankPullGS._omp_fn.0	pr	19.550835
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	9.033240
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	8.750751
+0	pvector<float>::fill._omp_fn.2	pr	4.914952
+0	[Others]	N/A	5.693586
+0	Effective Physical Core Utilization	77.5% (34.114 out of 44)
+1	Effective Logical Core Utilization	38.8% (34.131 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	11853831
-1	Collection start time	22:52:06 02/10/2025 UTC
-1	Collection stop time	22:52:14 02/10/2025 UTC
+1	Result Size	9466673
+1	Collection start time	23:49:32 04/10/2025 UTC
+1	Collection stop time	23:49:41 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989951
+2	Frequency	2199990030
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

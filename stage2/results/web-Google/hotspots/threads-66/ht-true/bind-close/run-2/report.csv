@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	1.361207
-1	CPU Time	35.419999
-2	Effective Time	35.419999
-3	Idle	0.0
-3	Poor	35.419999
+0	Elapsed Time	1.495937
+1	CPU Time	15.550000
+2	Effective Time	15.550000
+3	Idle	0.010000
+3	Poor	15.540000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	17.566759
-0	func@0x18e20	libgomp.so.1	12.482232
-0	func@0x18c90	libgomp.so.1	2.016024
-0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.938627
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.868042
-0	[Others]	N/A	1.548314
-0	Effective Physical Core Utilization	40.1% (17.665 out of 44)
-1	Effective Logical Core Utilization	29.8% (26.260 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	13.348044
+0	std::istream::operator>>	libstdc++.so.6	0.619986
+0	func@0x18e20	libgomp.so.1	0.512039
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.510000
+0	func@0x18c90	libgomp.so.1	0.279917
+0	[Others]	N/A	0.280014
+0	Effective Physical Core Utilization	24.3% (10.681 out of 44)
+1	Effective Logical Core Utilization	12.1% (10.684 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Google/web-Google.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4547121
-1	Collection start time	00:58:57 03/10/2025 UTC
-1	Collection stop time	00:58:59 03/10/2025 UTC
+1	Result Size	4135442
+1	Collection start time	00:51:43 05/10/2025 UTC
+1	Collection stop time	00:51:45 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989902
+2	Frequency	2199989990
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

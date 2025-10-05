@@ -1,186 +1,0 @@
-vtune: Peak bandwidth measurement started.
-vtune: Peak bandwidth measurement finished.
-vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /scratch/tsgoncalves/perf-analysis/stage2/results/web-Google/performance-snapshot/threads-36/ht-true/bind-close/run-3 -command stop.
-Read Time:           0.66329
-Build Time:          0.03888
-Graph has 916428 nodes and 5105039 directed edges for degree: 5
-Trial Time:          0.03678
-Trial Time:          0.03330
-Trial Time:          0.03253
-Trial Time:          0.03300
-Trial Time:          0.03331
-Trial Time:          0.03272
-Trial Time:          0.03248
-Trial Time:          0.03139
-Trial Time:          0.04099
-Trial Time:          0.03308
-Trial Time:          0.03307
-Trial Time:          0.03338
-Trial Time:          0.03140
-Trial Time:          0.03204
-Trial Time:          0.03248
-Trial Time:          0.03290
-Average Time:        0.03343
-vtune: Collection stopped.
-vtune: Using result path `/scratch/tsgoncalves/perf-analysis/stage2/results/web-Google/performance-snapshot/threads-36/ht-true/bind-close/run-3'
-vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-75276-blaise.sc' file   vtune: Executing actions 12 % Loading 'systemcollector-75276-blaise.sc' file   vtune: Executing actions 12 % Loading '75286.stat.perf' file                   vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving thread name information                vtune: Executing actions 21 % Resolving thread name information                vtune: Executing actions 21 % Resolving call target names for dynamic code     vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 24 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 31 % Processing profile metrics and debug information vtune: Executing actions 31 % Preparing output tree                            vtune: Executing actions 31 % Parsing columns in input tree                    vtune: Executing actions 32 % Parsing columns in input tree                    vtune: Executing actions 32 % Creating top-level columns                       vtune: Executing actions 32 % Creating top-level rows                          vtune: Executing actions 33 % Creating top-level rows                          vtune: Executing actions 33 % Preparing output tree                            vtune: Executing actions 33 % Parsing columns in input tree                    vtune: Executing actions 33 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level rows                          vtune: Executing actions 35 % Creating top-level rows                          vtune: Executing actions 35 % Setting data model parameters                    vtune: Executing actions 35 % Precomputing frequently used data                vtune: Executing actions 35 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 37 % Precomputing frequently used data                vtune: Executing actions 38 % Precomputing frequently used data                vtune: Executing actions 39 % Precomputing frequently used data                vtune: Executing actions 40 % Precomputing frequently used data                vtune: Executing actions 41 % Precomputing frequently used data                vtune: Executing actions 41 % Updating precomputed scalar metrics              vtune: Executing actions 42 % Updating precomputed scalar metrics              vtune: Executing actions 42 % Discarding redundant overtime data               vtune: Executing actions 44 % Discarding redundant overtime data               vtune: Executing actions 44 % Saving the result                                vtune: Executing actions 46 % Saving the result                                vtune: Executing actions 48 % Saving the result                                vtune: Executing actions 49 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 1.302s
-    IPC: 0.684
-     | The IPC may be too low. This could be caused by issues such as memory
-     | stalls, instruction starvation, branch misprediction or long latency
-     | instructions. Explore the other hardware-related metrics to identify what
-     | is causing low IPC.
-     |
-    SP GFLOPS: 2.955
-    DP GFLOPS: 0.291
-    x87 GFLOPS: 0.009
-    Average CPU Frequency: 2.822 GHz 
-Effective Logical Core Utilization: 19.6% (17.276 out of 88)
- | The metric value is low, which may signal a poor logical CPU cores
- | utilization. Consider improving physical core utilization as the first step
- | and then look at opportunities to utilize logical cores, which in some cases
- | can improve processor throughput and overall performance of multi-threaded
- | applications.
- |
-    Effective Physical Core Utilization: 39.3% (17.276 out of 44)
-     | The metric value is low, which may signal a poor physical CPU cores
-     | utilization caused by:
-     |     - load imbalance
-     |     - threading runtime overhead
-     |     - contended synchronization
-     |     - thread/process underutilization
-     |     - incorrect affinity that utilizes logical cores instead of physical
-     |       cores
-     | Explore sub-metrics to estimate the efficiency of MPI and OpenMP
-     | parallelism or run the Locks and Waits analysis to identify parallel
-     | bottlenecks for other parallel runtimes.
-     |
-Microarchitecture Usage: 21.1% of Pipeline Slots
- | You code efficiency on this platform is too low.
- | 
- | Possible cause: memory stalls, instruction starvation, branch misprediction
- | or long latency instructions.
- | 
- | Next steps: Run Microarchitecture Exploration analysis to identify the cause
- | of the low microarchitecture usage efficiency.
- |
-    Retiring: 21.1% of Pipeline Slots
-    Front-End Bound: 5.2% of Pipeline Slots
-    Back-End Bound: 65.6% of Pipeline Slots
-     | A significant portion of pipeline slots are remaining empty. When
-     | operations take too long in the back-end, they introduce bubbles in the
-     | pipeline that ultimately cause fewer pipeline slots containing useful
-     | work to be retired per cycle than the machine is capable to support. This
-     | opportunity cost results in slower execution. Long-latency operations
-     | like divides and memory operations can cause this, as can too many
-     | operations being directed to a single execution port (for example, more
-     | multiply operations arriving in the back-end per cycle than the execution
-     | unit can support).
-     |
-        Memory Bound: 34.6% of Pipeline Slots
-         | The metric value is high. This can indicate that the significant
-         | fraction of execution pipeline slots could be stalled due to demand
-         | memory load and stores. Use Memory Access analysis to have the metric
-         | breakdown by memory hierarchy, memory bandwidth information,
-         | correlation by memory objects.
-         |
-        Core Bound: 30.9% of Pipeline Slots
-         | This metric represents how much Core non-memory issues were of a
-         | bottleneck. Shortage in hardware compute resources, or dependencies
-         | software's instructions are both categorized under Core Bound. Hence
-         | it may indicate the machine ran out of an OOO resources, certain
-         | execution units are overloaded or dependencies in program's data- or
-         | instruction- flow are limiting the performance (e.g. FP-chained long-
-         | latency arithmetic operations).
-         |
-    Bad Speculation: 8.1% of Pipeline Slots
-Memory Bound: 34.6% of Pipeline Slots
- | The metric value is high. This can indicate that the significant fraction of
- | execution pipeline slots could be stalled due to demand memory load and
- | stores. Use Memory Access analysis to have the metric breakdown by memory
- | hierarchy, memory bandwidth information, correlation by memory objects.
- |
-    L1 Bound: 13.9% of Clockticks
-     | This metric shows how often machine was stalled without missing the L1
-     | data cache. The L1 cache typically has the shortest latency. However, in
-     | certain cases like loads blocked on older stores, a load might suffer a
-     | high latency even though it is being satisfied by the L1.
-     |
-    L2 Bound: 5.3% of Clockticks
-     | This metric shows how often machine was stalled on L2 cache. Avoiding
-     | cache misses (L1 misses/L2 hits) will improve the latency and increase
-     | performance.
-     |
-    L3 Bound: 21.0% of Clockticks
-     | This metric shows how often CPU was stalled on L3 cache, or contended
-     | with a sibling Core. Avoiding cache misses (L2 misses/L3 hits) improves
-     | the latency and increases performance.
-     |
-    DRAM Bound: 4.2% of Clockticks
-        DRAM Bandwidth Bound: 0.0% of Elapsed Time
-    Store Bound: 1.0% of Clockticks
-    NUMA: % of Remote Accesses: 62.1%
-Vectorization: 0.0% of Packed FP Operations
- | A significant fraction of floating point arithmetic instructions are scalar.
- | Use Intel Advisor to see possible reasons why the code was not vectorized.
- |
-    Instruction Mix
-        SP FLOPs: 7.2% of uOps
-            Packed: 0.0% from SP FP
-                128-bit: 0.0% from SP FP
-                256-bit: 0.0% from SP FP
-            Scalar: 100.0% from SP FP
-             | This code has floating point operations and is not vectorized.
-             | Consider using Intel Advisor to vectorize the loops.
-             |
-        DP FLOPs: 0.7% of uOps
-            Packed: 0.0% from DP FP
-                128-bit: 0.0% from DP FP
-                256-bit: 0.0% from DP FP
-            Scalar: 100.0% from DP FP
-             | This code has floating point operations and is not vectorized.
-             | Consider using Intel Advisor to vectorize the loops.
-             |
-        x87 FLOPs: 0.0% of uOps
-        Non-FP: 92.1% of uOps
-    FP Arith/Mem Rd Instr. Ratio: 0.348
-     | The metric value is low. This can be a result of unaligned access to data
-     | for vector operations. Use Intel Advisor to find possible data access
-     | inefficiencies for vector operations.
-     |
-    FP Arith/Mem Wr Instr. Ratio: 2.237
-Collection and Platform Info
-    Application Command Line: /scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Google/web-Google.el" "-i" "500" "-t" "1e-6" 
-    Operating System: 4.19.0-25-amd64 10.13
-    Computer Name: blaise
-    Result Size: 3.6 MB 
-    Collection start time: 00:43:42 03/10/2025 UTC
-    Collection stop time: 00:43:43 03/10/2025 UTC
-    Collector Type: Driverless Perf per-process counting
-    CPU
-        Name: Intel(R) Xeon(R) Processor code named Broadwell
-        Frequency: 2.200 GHz 
-        Logical CPU Count: 88
-        Max DRAM Single-Package Bandwidth: 70.000 GB/s
-        Cache Allocation Technology
-            Level 2 capability: not detected
-            Level 3 capability: available
-
-Recommendations:
-    Hotspots: Start with Hotspots analysis to understand the efficiency of your algorithm.
-     | Use Hotspots analysis to identify the most time consuming functions.
-     | Drill down to see the time spent on every line of code.
-    Threading: There is poor utilization of logical CPU cores (19.6%) in your application. 
-     |  Use Threading to explore more opportunities to increase parallelism in
-     | your application.
-    Microarchitecture Exploration: There is low microarchitecture usage (21.1%) of available hardware resources. 
-     | Run Microarchitecture Exploration analysis to analyze CPU
-     | microarchitecture bottlenecks that can affect application performance.
-    Memory Access: The Memory Bound metric is high  (34.6%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 
-     | Use Memory Access analysis to measure metrics that can identify memory
-     | access issues.
-
-If you want to skip descriptions of detected performance issues in the report,
-enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
-Alternatively, you may view the report in the csv format: vtune -report
-<report_name> -format=csv.
-vtune: Executing actions 100 % Generating a report                             vtune: Executing actions 100 % done                                            

@@ -1,0 +1,93 @@
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /scratch/tsgoncalves/perf-analysis/stage2/results/com-Friendster/hotspots/threads-1/ht-true/bind-spread/run-5 -command stop.
+Read Time:           0.24129
+Build Time:          2.95424
+Graph has 124736033 nodes and 1442970 directed edges for degree: 0
+Trial Time:          1.59108
+Trial Time:          1.42267
+Trial Time:          1.38491
+Trial Time:          1.43455
+Trial Time:          1.43315
+Trial Time:          1.42976
+Trial Time:          1.42704
+Trial Time:          1.43387
+Trial Time:          1.43750
+Trial Time:          1.46981
+Trial Time:          1.43471
+Trial Time:          1.40027
+Trial Time:          1.42452
+Trial Time:          1.39646
+Trial Time:          1.38429
+Trial Time:          1.43378
+Average Time:        1.43365
+vtune: Collection stopped.
+vtune: Using result path `/scratch/tsgoncalves/perf-analysis/stage2/results/com-Friendster/hotspots/threads-1/ht-true/bind-spread/run-5'
+vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-17643-blaise.sc' file   vtune: Executing actions 12 % Loading 'systemcollector-17643-blaise.sc' file   vtune: Executing actions 12 % Loading '17653.stat.perf' file                   vtune: Executing actions 12 % Loading '17643-17653.0.trace' file               vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for dangling locations     vtune: Executing actions 19 % Resolving information for `pr'                   
+vtune: Warning: Cannot locate debugging information for file `/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr'.
+vtune: Executing actions 20 % Resolving information for `pr'                   vtune: Executing actions 20 % Resolving information for `libstdc++.so.6'       vtune: Executing actions 20 % Resolving information for `libc.so.6'            vtune: Executing actions 20 % Resolving information for `libgomp.so.1'         
+vtune: Warning: Cannot locate debugging information for file `/lib/x86_64-linux-gnu/libgomp.so.1'.
+vtune: Warning: Cannot locate debugging information for file `/lib/x86_64-linux-gnu/libstdc++.so.6'.
+vtune: Executing actions 20 % Resolving information for `libtpsstool.so'       vtune: Executing actions 21 % Resolving information for `libtpsstool.so'       
+vtune: Warning: Cannot locate debugging information for file `/home/intel/oneapi/vtune/2021.1.1/lib64/libtpsstool.so'.
+vtune: Executing actions 22 % Resolving information for `libtpsstool.so'       vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 30 % Setting data model parameters                    vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 31 % Precomputing frequently used data                vtune: Executing actions 33 % Precomputing frequently used data                vtune: Executing actions 34 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 36 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Discarding redundant overtime data               vtune: Executing actions 39 % Discarding redundant overtime data               vtune: Executing actions 39 % Saving the result                                vtune: Executing actions 41 % Saving the result                                vtune: Executing actions 42 % Saving the result                                vtune: Executing actions 49 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 30.372s
+    CPU Time: 29.650s
+        Effective Time: 29.650s
+            Idle: 0.188s
+            Poor: 29.462s
+            Ok: 0s
+            Ideal: 0s
+            Over: 0s
+        Spin Time: 0s
+        Overhead Time: 0s
+    Total Thread Count: 1
+    Paused Time: 0s
+
+Top Hotspots
+Function                                                           Module  CPU Time
+-----------------------------------------------------------------  ------  --------
+PageRankPullGS._omp_fn.1                                           pr       14.244s
+PageRankPullGS._omp_fn.0                                           pr        5.606s
+pvector<float>::fill._omp_fn.2                                     pr        2.654s
+CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3                    pr        1.876s
+BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12  pr        1.822s
+[Others]                                                           N/A       3.448s
+Effective Physical Core Utilization: 2.3% (0.996 out of 44)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 1.1% (0.997 out of 88)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Collection and Platform Info
+    Application Command Line: /scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
+    Operating System: 4.19.0-25-amd64 10.13
+    Computer Name: blaise
+    Result Size: 4.3 MB 
+    Collection start time: 23:10:09 04/10/2025 UTC
+    Collection stop time: 23:10:39 04/10/2025 UTC
+    Collector Type: Driverless Perf per-process counting,User-mode sampling and tracing
+    CPU
+        Name: Intel(R) Xeon(R) Processor code named Broadwell
+        Frequency: 2.200 GHz 
+        Logical CPU Count: 88
+        Cache Allocation Technology
+            Level 2 capability: not detected
+            Level 3 capability: available
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
+vtune: Executing actions 100 % Generating a report                             vtune: Executing actions 100 % done                                            

@@ -1,60 +1,60 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	6.841452
-1	IPC	0.555412
-1	SP GFLOPS	2.991677
-1	DP GFLOPS	0.934235
-1	x87 GFLOPS	0.000771
-1	Average CPU Frequency	2863319997.542774
-0	Effective Logical Core Utilization	23.9% (21.070 out of 88)
-1	Effective Physical Core Utilization	47.9% (21.063 out of 44)
-0	Microarchitecture Usage	15.2
-1	Retiring	15.2
-1	Front-End Bound	2.7
-1	Back-End Bound	80.8
-2	Memory Bound	63.0
-2	Core Bound	17.8
-1	Bad Speculation	1.3
-0	Memory Bound	63.0
-1	L1 Bound	10.1
-1	L2 Bound	7.6
-1	L3 Bound	8.1
-1	DRAM Bound	36.3
+0	Elapsed Time	6.872274
+1	IPC	0.505398
+1	SP GFLOPS	3.152955
+1	DP GFLOPS	0.933097
+1	x87 GFLOPS	0.000766
+1	Average CPU Frequency	2863757869.903775
+0	Effective Logical Core Utilization	25.4% (22.318 out of 88)
+1	Effective Physical Core Utilization	50.7% (22.316 out of 44)
+0	Microarchitecture Usage	15.1
+1	Retiring	15.1
+1	Front-End Bound	2.0
+1	Back-End Bound	83.9
+2	Memory Bound	67.5
+2	Core Bound	16.4
+1	Bad Speculation	0.0
+0	Memory Bound	67.5
+1	L1 Bound	7.6
+1	L2 Bound	4.8
+1	L3 Bound	10.8
+1	DRAM Bound	44.2
 2	DRAM Bandwidth Bound	0.0
-1	Store Bound	9.6
-1	NUMA: % of Remote Accesses	34.0
+1	Store Bound	9.3
+1	NUMA: % of Remote Accesses	22.1
 0	Vectorization	0.0
 1	Instruction Mix	
-2	SP FLOPs	8.2
+2	SP FLOPs	8.1
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
-2	DP FLOPs	2.5
+2	DP FLOPs	2.4
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
 2	x87 FLOPs	0.0
-2	Non-FP	89.3
-1	FP Arith/Mem Rd Instr. Ratio	0.571828
-1	FP Arith/Mem Wr Instr. Ratio	1.233185
+2	Non-FP	89.4
+1	FP Arith/Mem Rd Instr. Ratio	0.639636
+1	FP Arith/Mem Wr Instr. Ratio	1.328070
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3659819
-1	Collection start time	06:19:14 03/10/2025 UTC
-1	Collection stop time	06:19:21 03/10/2025 UTC
+1	Result Size	3659677
+1	Collection start time	03:25:12 05/10/2025 UTC
+1	Collection stop time	03:25:19 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990024
+2	Frequency	2199990017
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	97000000000.000000
+2	Max DRAM Single-Package Bandwidth	84000000000.000000
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected
 3	Level 3 capability	available
 0	Recommendations:
 1	Hotspots	Start with Hotspots analysis to understand the efficiency of your algorithm.	Use Hotspots analysis to identify the most time consuming functions. Drill down to see the time spent on every line of code.
-1	Memory Access	The Memory Bound metric is high  (63.0%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
-1	Threading	There is poor utilization of logical CPU cores (23.9%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
+1	Memory Access	The Memory Bound metric is high  (67.5%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
+1	Threading	There is poor utilization of logical CPU cores (25.4%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.

@@ -1,23 +1,23 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	2.926951
+0	Elapsed Time	2.898944
 1	SP GFLOPS	0.0
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	1.435116
-1	Average CPU Frequency	2885889066.518527
+1	CPI Rate	1.454813
+1	Average CPU Frequency	2884118512.504966
 1	Total Thread Count	44
-0	Effective Physical Core Utilization	17.2% (7.587 out of 44)
-1	Effective Logical Core Utilization	8.9% (7.791 out of 88)
-0	Memory Bound	48.6
-1	Cache Bound	56.1
+0	Effective Physical Core Utilization	18.5% (8.151 out of 44)
+1	Effective Logical Core Utilization	8.9% (7.813 out of 88)
+0	Memory Bound	35.8
+1	Cache Bound	43.9
 1	DRAM Bound	0.0
-2	DRAM Bandwidth Bound	7.5
-1	NUMA: % of Remote Accesses	100.0
+2	DRAM Bandwidth Bound	0.0
+1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	142.000000	60.600000	7.881922	0.0
-1	DRAM Single-Package, GB/sec	71.000000	51.800000	6.819383	7.5
-1	QPI Outgoing, GB/sec	68.000000	40.700000	5.152119	0.0
+1	DRAM, GB/sec	168.000000	61.500000	8.541040	0.0
+1	DRAM Single-Package, GB/sec	84.000000	44.000000	5.960790	0.0
+1	QPI Outgoing, GB/sec	68.000000	41.500000	5.408865	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	0.0
@@ -38,12 +38,12 @@ Hierarchy Level	Metric Name	Metric Value
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Orkut/com-Orkut.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	15407184
-1	Collection start time	05:02:07 03/10/2025 UTC
-1	Collection stop time	05:02:10 03/10/2025 UTC
+1	Result Size	14499058
+1	Collection start time	02:50:49 05/10/2025 UTC
+1	Collection stop time	02:50:51 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989977
+2	Frequency	2199990064
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	71000000000.000000
+2	Max DRAM Single-Package Bandwidth	84000000000.000000

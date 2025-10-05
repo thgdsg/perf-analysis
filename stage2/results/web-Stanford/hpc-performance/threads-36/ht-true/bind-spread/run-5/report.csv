@@ -1,23 +1,23 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.879782
+0	Elapsed Time	0.881892
 1	SP GFLOPS	0.0
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	1.569727
-1	Average CPU Frequency	2835603150.689079
+1	CPI Rate	1.574594
+1	Average CPU Frequency	2840358506.257570
 1	Total Thread Count	36
-0	Effective Physical Core Utilization	30.9% (13.587 out of 44)
-1	Effective Logical Core Utilization	15.8% (13.947 out of 88)
-0	Memory Bound	33.1
-1	Cache Bound	42.5
+0	Effective Physical Core Utilization	32.4% (14.270 out of 44)
+1	Effective Logical Core Utilization	16.0% (14.038 out of 88)
+0	Memory Bound	24.4
+1	Cache Bound	29.8
 1	DRAM Bound	0.0
 2	DRAM Bandwidth Bound	0.0
 1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	178.000000	27.900000	6.683471	0.0
-1	DRAM Single-Package, GB/sec	89.000000	20.000000	5.819621	0.0
-1	QPI Outgoing, GB/sec	68.000000	17.100000	4.046455	0.0
+1	DRAM, GB/sec	170.000000	18.900000	6.667482	0.0
+1	DRAM Single-Package, GB/sec	85.000000	13.900000	5.533557	0.0
+1	QPI Outgoing, GB/sec	68.000000	13.100000	3.583205	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	0.0
@@ -38,12 +38,12 @@ Hierarchy Level	Metric Name	Metric Value
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	9051182
-1	Collection start time	20:07:58 02/10/2025 UTC
-1	Collection stop time	20:07:58 02/10/2025 UTC
+1	Result Size	8828195
+1	Collection start time	22:19:16 04/10/2025 UTC
+1	Collection stop time	22:19:16 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990557
+2	Frequency	2199990000
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	89000000000.000000
+2	Max DRAM Single-Package Bandwidth	85000000000.000000

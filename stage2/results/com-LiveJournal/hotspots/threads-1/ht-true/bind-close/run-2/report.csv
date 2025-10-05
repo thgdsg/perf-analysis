@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	1.137210
-1	CPU Time	0.999999
-2	Effective Time	0.999999
+0	Elapsed Time	1.329743
+1	CPU Time	0.960000
+2	Effective Time	0.960000
 3	Idle	0.0
-3	Poor	0.999999
+3	Poor	0.960000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	0.566815
-0	std::istream::operator>>	libstdc++.so.6	0.091999
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	0.072010
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.072000
-0	PageRankPullGS._omp_fn.0	pr	0.056009
-0	[Others]	N/A	0.141166
-0	Effective Physical Core Utilization	2.2% (0.965 out of 44)
-1	Effective Logical Core Utilization	1.1% (0.965 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	0.553966
+0	std::istream::operator>>	libstdc++.so.6	0.090000
+0	PageRankPullGS._omp_fn.0	pr	0.084024
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.047912
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	0.043712
+0	[Others]	N/A	0.140386
+0	Effective Physical Core Utilization	1.8% (0.803 out of 44)
+1	Effective Logical Core Utilization	0.9% (0.803 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-LiveJournal/com-LiveJournal.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3648971
-1	Collection start time	07:13:52 03/10/2025 UTC
-1	Collection stop time	07:13:53 03/10/2025 UTC
+1	Result Size	3648301
+1	Collection start time	03:52:26 05/10/2025 UTC
+1	Collection stop time	03:52:27 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989881
+2	Frequency	2199990080
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

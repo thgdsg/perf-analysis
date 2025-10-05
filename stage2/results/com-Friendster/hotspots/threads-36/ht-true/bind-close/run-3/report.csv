@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	8.357370
-1	CPU Time	236.630000
-2	Effective Time	236.630000
-3	Idle	0.040000
-3	Poor	236.590000
+0	Elapsed Time	8.203422
+1	CPU Time	242.500000
+2	Effective Time	242.500000
+3	Idle	0.030306
+3	Poor	242.469694
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	168.040873
-0	PageRankPullGS._omp_fn.0	pr	21.653574
-0	pvector<float>::fill._omp_fn.2	pr	15.879981
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	9.574155
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	8.823807
-0	[Others]	N/A	12.657609
-0	Effective Physical Core Utilization	64.4% (28.356 out of 44)
-1	Effective Logical Core Utilization	32.3% (28.383 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	193.477323
+0	PageRankPullGS._omp_fn.0	pr	17.546418
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	8.474304
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	7.858889
+0	pvector<float>::fill._omp_fn.2	pr	4.878341
+0	[Others]	N/A	10.264725
+0	Effective Physical Core Utilization	67.3% (29.600 out of 44)
+1	Effective Logical Core Utilization	33.6% (29.603 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	8392167
-1	Collection start time	06:32:56 03/10/2025 UTC
-1	Collection stop time	06:33:04 03/10/2025 UTC
+1	Result Size	8506160
+1	Collection start time	03:32:13 05/10/2025 UTC
+1	Collection stop time	03:32:22 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990036
+2	Frequency	2199990031
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

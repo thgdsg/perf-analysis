@@ -1,11 +1,11 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	1.672043
-1	CPU Time	49.940000
-2	Effective Time	49.940000
-3	Idle	0.0
-3	Poor	4.713683
-3	Ok	3.673741
-3	Ideal	41.552576
+0	Elapsed Time	1.622468
+1	CPU Time	15.320000
+2	Effective Time	15.320000
+3	Idle	0.030000
+3	Poor	15.290000
+3	Ok	0.0
+3	Ideal	0.0
 3	Over	0.0
 2	Spin Time	0.0
 2	Overhead Time	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	func@0x18e20	libgomp.so.1	20.835415
-0	PageRankPullGS._omp_fn.1	pr	20.809248
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	2.084963
-0	func@0x18c90	libgomp.so.1	1.785579
-0	GOMP_loop_dynamic_start	libgomp.so.1	1.039286
-0	[Others]	N/A	3.385508
-0	Effective Physical Core Utilization	34.8% (15.315 out of 44)
-1	Effective Logical Core Utilization	34.2% (30.132 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	12.904262
+0	std::istream::operator>>	libstdc++.so.6	0.615829
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.490000
+0	func@0x18c90	libgomp.so.1	0.463841
+0	func@0x18e20	libgomp.so.1	0.461897
+0	[Others]	N/A	0.384171
+0	Effective Physical Core Utilization	23.2% (10.205 out of 44)
+1	Effective Logical Core Utilization	11.6% (10.208 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Google/web-Google.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4944160
-1	Collection start time	01:05:43 03/10/2025 UTC
-1	Collection stop time	01:05:45 03/10/2025 UTC
+1	Result Size	4100220
+1	Collection start time	00:55:10 05/10/2025 UTC
+1	Collection stop time	00:55:11 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989888
+2	Frequency	2199990105
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

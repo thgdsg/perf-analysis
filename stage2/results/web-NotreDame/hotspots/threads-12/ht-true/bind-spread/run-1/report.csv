@@ -1,5 +1,5 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.589894
+0	Elapsed Time	0.690689
 1	CPU Time	3.190000
 2	Effective Time	3.190000
 3	Idle	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	1.441862
-0	func@0x18e20	libgomp.so.1	1.180067
-0	std::istream::operator>>	libstdc++.so.6	0.178011
-0	func@0x17b90	libgomp.so.1	0.122130
-0	func@0x18c90	libgomp.so.1	0.117971
-0	[Others]	N/A	0.149960
-0	Effective Physical Core Utilization	13.0% (5.701 out of 44)
-1	Effective Logical Core Utilization	6.5% (5.710 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	1.458196
+0	func@0x18e20	libgomp.so.1	1.169819
+0	std::istream::operator>>	libstdc++.so.6	0.179821
+0	func@0x18c90	libgomp.so.1	0.117997
+0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.098090
+0	[Others]	N/A	0.166076
+0	Effective Physical Core Utilization	11.0% (4.849 out of 44)
+1	Effective Logical Core Utilization	5.5% (4.849 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-NotreDame/web-NotreDame.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3746573
-1	Collection start time	18:55:20 02/10/2025 UTC
-1	Collection stop time	18:55:21 02/10/2025 UTC
+1	Result Size	3749064
+1	Collection start time	21:39:31 04/10/2025 UTC
+1	Collection stop time	21:39:31 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990200
+2	Frequency	2199989837
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

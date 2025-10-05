@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	8.259113
-1	CPU Time	288.300000
-2	Effective Time	288.300000
-3	Idle	0.040000
-3	Poor	288.260000
+0	Elapsed Time	8.311708
+1	CPU Time	305.710000
+2	Effective Time	305.710000
+3	Idle	0.030000
+3	Poor	305.680000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	208.507032
-0	PageRankPullGS._omp_fn.0	pr	23.847846
-0	pvector<float>::fill._omp_fn.2	pr	19.614814
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	11.271674
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	10.072331
-0	[Others]	N/A	14.986303
-0	Effective Physical Core Utilization	79.3% (34.909 out of 44)
-1	Effective Logical Core Utilization	39.7% (34.957 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	241.818772
+0	PageRankPullGS._omp_fn.0	pr	23.711736
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	12.996786
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	10.879161
+0	pvector<float>::fill._omp_fn.2	pr	5.760431
+0	[Others]	N/A	10.543115
+0	Effective Physical Core Utilization	83.6% (36.771 out of 44)
+1	Effective Logical Core Utilization	41.8% (36.789 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	9394130
-1	Collection start time	06:43:04 03/10/2025 UTC
-1	Collection stop time	06:43:12 03/10/2025 UTC
+1	Result Size	9711677
+1	Collection start time	03:37:15 05/10/2025 UTC
+1	Collection stop time	03:37:23 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989980
+2	Frequency	2199990008
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

@@ -1,26 +1,26 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	4.387020
-1	SP GFLOPS	0.319124
+0	Elapsed Time	4.002497
+1	SP GFLOPS	0.299813
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	0.940773
-1	Average CPU Frequency	3378915886.711451
+1	CPI Rate	0.821304
+1	Average CPU Frequency	3378462610.339477
 1	Total Thread Count	4
-0	Effective Physical Core Utilization	5.1% (2.234 out of 44)
-1	Effective Logical Core Utilization	2.5% (2.240 out of 88)
-0	Memory Bound	39.6
-1	Cache Bound	50.3
-1	DRAM Bound	1.8
+0	Effective Physical Core Utilization	4.8% (2.094 out of 44)
+1	Effective Logical Core Utilization	2.4% (2.100 out of 88)
+0	Memory Bound	32.9
+1	Cache Bound	42.0
+1	DRAM Bound	1.6
 2	DRAM Bandwidth Bound	0.0
-1	NUMA: % of Remote Accesses	20.0
+1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	142.000000	17.900000	3.008876	0.0
-1	DRAM Single-Package, GB/sec	71.000000	13.900000	2.056065	0.0
-1	QPI Outgoing, GB/sec	68.000000	14.500000	1.331200	0.0
+1	DRAM, GB/sec	166.000000	20.600000	2.648347	0.0
+1	DRAM Single-Package, GB/sec	83.000000	20.600000	2.633356	0.0
+1	QPI Outgoing, GB/sec	68.000000	1.600000	0.0	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
-2	SP FLOPs	3.9
+2	SP FLOPs	3.4
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
@@ -31,19 +31,19 @@ Hierarchy Level	Metric Name	Metric Value
 4	256-bit	0.0
 3	Scalar	0.0
 2	x87 FLOPs	0.0
-2	Non-FP	96.1
-1	FP Arith/Mem Rd Instr. Ratio	0.120065
-1	FP Arith/Mem Wr Instr. Ratio	0.373821
+2	Non-FP	96.6
+1	FP Arith/Mem Rd Instr. Ratio	0.108989
+1	FP Arith/Mem Wr Instr. Ratio	0.334252
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Orkut/com-Orkut.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	12593518
-1	Collection start time	04:24:00 03/10/2025 UTC
-1	Collection stop time	04:24:05 03/10/2025 UTC
+1	Result Size	10467296
+1	Collection start time	02:32:24 05/10/2025 UTC
+1	Collection stop time	02:32:28 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989966
+2	Frequency	2199989977
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	71000000000.000000
+2	Max DRAM Single-Package Bandwidth	83000000000.000000

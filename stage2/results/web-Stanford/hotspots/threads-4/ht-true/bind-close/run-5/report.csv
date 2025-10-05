@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	1.432280
-1	CPU Time	4.249994
-2	Effective Time	4.249994
+0	Elapsed Time	1.408877
+1	CPU Time	4.189994
+2	Effective Time	4.189994
 3	Idle	0.0
-3	Poor	4.249994
+3	Poor	4.189994
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	3.347997
-0	std::istream::operator>>	libstdc++.so.6	0.277992
-0	func@0x18e20	libgomp.so.1	0.195998
-0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.112018
-0	func@0x17b90	libgomp.so.1	0.091999
-0	[Others]	N/A	0.223991
-0	Effective Physical Core Utilization	6.9% (3.017 out of 44)
-1	Effective Logical Core Utilization	3.4% (3.019 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	3.364005
+0	std::istream::operator>>	libstdc++.so.6	0.267569
+0	func@0x18e20	libgomp.so.1	0.253995
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	0.091997
+0	func@0x17b90	libgomp.so.1	0.067996
+0	[Others]	N/A	0.144432
+0	Effective Physical Core Utilization	6.9% (3.028 out of 44)
+1	Effective Logical Core Utilization	3.4% (3.029 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3748597
-1	Collection start time	03:20:31 03/10/2025 UTC
-1	Collection stop time	03:20:32 03/10/2025 UTC
+1	Result Size	3746926
+1	Collection start time	02:01:51 05/10/2025 UTC
+1	Collection stop time	02:01:52 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989834
+2	Frequency	2199989843
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

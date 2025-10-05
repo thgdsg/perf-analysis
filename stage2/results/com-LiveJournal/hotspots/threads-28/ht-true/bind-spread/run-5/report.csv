@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.481765
-1	CPU Time	6.580000
-2	Effective Time	6.580000
+0	Elapsed Time	0.453635
+1	CPU Time	5.750000
+2	Effective Time	5.750000
 3	Idle	0.0
-3	Poor	6.580000
+3	Poor	5.750000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	4.253416
-0	func@0x18e20	libgomp.so.1	1.006208
-0	pvector<float>::fill._omp_fn.2	pr	0.316531
-0	PageRankPullGS._omp_fn.0	pr	0.243469
-0	func@0x18c90	libgomp.so.1	0.199751
-0	[Others]	N/A	0.560625
-0	Effective Physical Core Utilization	32.9% (14.456 out of 44)
-1	Effective Logical Core Utilization	16.4% (14.458 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	3.658457
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	0.449424
+0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	0.397191
+0	func@0x18e20	libgomp.so.1	0.395423
+0	PageRankPullGS._omp_fn.0	pr	0.263658
+0	[Others]	N/A	0.585847
+0	Effective Physical Core Utilization	30.6% (13.449 out of 44)
+1	Effective Logical Core Utilization	15.3% (13.457 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-LiveJournal/com-LiveJournal.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3951112
-1	Collection start time	23:36:50 02/10/2025 UTC
-1	Collection stop time	23:36:50 02/10/2025 UTC
+1	Result Size	3859446
+1	Collection start time	00:11:36 05/10/2025 UTC
+1	Collection stop time	00:11:36 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989773
+2	Frequency	2199990310
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

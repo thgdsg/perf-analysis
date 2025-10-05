@@ -1,23 +1,23 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	1.296364
+0	Elapsed Time	1.258252
 1	SP GFLOPS	0.0
 1	DP GFLOPS	0.0
 1	x87 GFLOPS	0.0
-1	CPI Rate	2.413924
-1	Average CPU Frequency	2812984080.472739
+1	CPI Rate	1.261730
+1	Average CPU Frequency	2890215741.482443
 1	Total Thread Count	88
-0	Effective Physical Core Utilization	42.9% (18.898 out of 44)
-1	Effective Logical Core Utilization	41.5% (36.502 out of 88)
-0	Memory Bound	13.3
-1	Cache Bound	23.1
+0	Effective Physical Core Utilization	11.7% (5.158 out of 44)
+1	Effective Logical Core Utilization	5.9% (5.198 out of 88)
+0	Memory Bound	38.5
+1	Cache Bound	100.0
 1	DRAM Bound	0.0
 2	DRAM Bandwidth Bound	0.0
 1	NUMA: % of Remote Accesses	0.0
 1	Bandwidth Utilization	
 1	Bandwidth Domain	Platform Maximum	Observed Maximum	Average	% of Elapsed Time with High BW Utilization(%)
-1	DRAM, GB/sec	176.000000	42.200000	6.325384	0.0
-1	DRAM Single-Package, GB/sec	88.000000	24.200000	4.813463	0.0
-1	QPI Outgoing, GB/sec	68.000000	18.000000	3.486675	0.0
+1	DRAM, GB/sec	164.000000	22.500000	5.436112	0.0
+1	DRAM Single-Package, GB/sec	82.000000	14.800000	4.545989	0.0
+1	QPI Outgoing, GB/sec	68.000000	15.000000	3.115433	0.0
 0	Vectorization	0.0
 1	Instruction Mix	
 2	SP FLOPs	0.0
@@ -38,12 +38,12 @@ Hierarchy Level	Metric Name	Metric Value
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	16429379
-1	Collection start time	20:25:30 02/10/2025 UTC
-1	Collection stop time	20:25:31 02/10/2025 UTC
+1	Result Size	8458932
+1	Collection start time	22:28:25 04/10/2025 UTC
+1	Collection stop time	22:28:27 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process sampling
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199990194
+2	Frequency	2199989902
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	88000000000.000000
+2	Max DRAM Single-Package Bandwidth	82000000000.000000

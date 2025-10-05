@@ -1,61 +1,61 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	0.853076
-1	IPC	0.467859
-1	SP GFLOPS	1.864018
-1	DP GFLOPS	0.147601
-1	x87 GFLOPS	0.005419
-1	Average CPU Frequency	2805266653.842453
-0	Effective Logical Core Utilization	44.0% (38.740 out of 88)
-1	Effective Physical Core Utilization	58.7% (25.810 out of 44)
-0	Microarchitecture Usage	27.1
-1	Retiring	27.1
-1	Front-End Bound	10.9
-1	Back-End Bound	58.3
-2	Memory Bound	23.9
-2	Core Bound	34.4
-1	Bad Speculation	3.7
-0	Memory Bound	23.9
-1	L1 Bound	12.8
-1	L2 Bound	0.7
-1	L3 Bound	9.2
-1	DRAM Bound	1.4
+0	Elapsed Time	0.797648
+1	IPC	0.847370
+1	SP GFLOPS	1.712494
+1	DP GFLOPS	0.216661
+1	x87 GFLOPS	0.005729
+1	Average CPU Frequency	2834698216.762280
+0	Effective Logical Core Utilization	8.6% (7.594 out of 88)
+1	Effective Physical Core Utilization	17.4% (7.666 out of 44)
+0	Microarchitecture Usage	15.2
+1	Retiring	15.2
+1	Front-End Bound	8.6
+1	Back-End Bound	56.1
+2	Memory Bound	38.3
+2	Core Bound	17.9
+1	Bad Speculation	20.1
+0	Memory Bound	38.3
+1	L1 Bound	35.8
+1	L2 Bound	0.0
+1	L3 Bound	39.4
+1	DRAM Bound	5.5
 2	DRAM Bandwidth Bound	0.0
-1	Store Bound	0.3
-1	NUMA: % of Remote Accesses	28.6
+1	Store Bound	1.3
+1	NUMA: % of Remote Accesses	19.4
 0	Vectorization	0.0
 1	Instruction Mix	
-2	SP FLOPs	2.4
+2	SP FLOPs	13.0
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
-2	DP FLOPs	0.2
+2	DP FLOPs	1.6
 3	Packed	0.0
 4	128-bit	0.0
 4	256-bit	0.0
 3	Scalar	100.0
 2	x87 FLOPs	0.0
-2	Non-FP	97.4
-1	FP Arith/Mem Rd Instr. Ratio	0.188967
-1	FP Arith/Mem Wr Instr. Ratio	2.236733
+2	Non-FP	85.3
+1	FP Arith/Mem Rd Instr. Ratio	0.223224
+1	FP Arith/Mem Wr Instr. Ratio	0.910668
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Stanford/web-Stanford.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	3618282
-1	Collection start time	20:15:18 02/10/2025 UTC
-1	Collection stop time	20:15:19 02/10/2025 UTC
+1	Result Size	3618145
+1	Collection start time	22:22:38 04/10/2025 UTC
+1	Collection stop time	22:22:39 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989912
+2	Frequency	2199990161
 2	Logical CPU Count	88
-2	Max DRAM Single-Package Bandwidth	88000000000.000000
+2	Max DRAM Single-Package Bandwidth	83000000000.000000
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected
 3	Level 3 capability	available
 0	Recommendations:
 1	Hotspots	Start with Hotspots analysis to understand the efficiency of your algorithm.	Use Hotspots analysis to identify the most time consuming functions. Drill down to see the time spent on every line of code.
-1	Microarchitecture Exploration	There is low microarchitecture usage (27.1%) of available hardware resources. 	Run Microarchitecture Exploration analysis to analyze CPU microarchitecture bottlenecks that can affect application performance.
-1	Threading	There is poor utilization of logical CPU cores (44.0%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
-1	Memory Access	The Memory Bound metric is high  (23.9%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
+1	Threading	There is poor utilization of logical CPU cores (8.6%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
+1	Microarchitecture Exploration	There is low microarchitecture usage (15.2%) of available hardware resources. 	Run Microarchitecture Exploration analysis to analyze CPU microarchitecture bottlenecks that can affect application performance.
+1	Memory Access	The Memory Bound metric is high  (38.3%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.

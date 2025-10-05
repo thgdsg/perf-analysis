@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	8.225692
-1	CPU Time	232.370000
-2	Effective Time	232.370000
-3	Idle	0.040000
-3	Poor	232.330000
+0	Elapsed Time	8.443109
+1	CPU Time	250.600000
+2	Effective Time	250.600000
+3	Idle	0.030171
+3	Poor	250.569829
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	170.434774
-0	PageRankPullGS._omp_fn.0	pr	19.382363
-0	pvector<float>::fill._omp_fn.2	pr	14.642955
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	8.681824
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	7.842577
-0	[Others]	N/A	11.385508
-0	Effective Physical Core Utilization	64.3% (28.307 out of 44)
-1	Effective Logical Core Utilization	32.2% (28.320 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	197.165248
+0	PageRankPullGS._omp_fn.0	pr	19.691720
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	9.506307
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	8.839005
+0	pvector<float>::fill._omp_fn.2	pr	5.434268
+0	[Others]	N/A	9.963453
+0	Effective Physical Core Utilization	67.5% (29.720 out of 44)
+1	Effective Logical Core Utilization	33.8% (29.725 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	8324086
-1	Collection start time	06:33:10 03/10/2025 UTC
-1	Collection stop time	06:33:18 03/10/2025 UTC
+1	Result Size	8630500
+1	Collection start time	03:32:27 05/10/2025 UTC
+1	Collection stop time	03:32:36 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989991
+2	Frequency	2199990015
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

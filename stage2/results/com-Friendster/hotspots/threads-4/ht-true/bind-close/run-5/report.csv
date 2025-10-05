@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	15.796859
-1	CPU Time	55.589989
-2	Effective Time	55.589989
-3	Idle	0.070000
-3	Poor	55.519989
+0	Elapsed Time	12.628013
+1	CPU Time	45.200000
+2	Effective Time	45.200000
+3	Idle	0.050000
+3	Poor	45.150000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	33.127947
-0	PageRankPullGS._omp_fn.0	pr	8.354360
-0	pvector<float>::fill._omp_fn.2	pr	3.805866
-0	BuilderBase<int, int, int, (bool)1>::SquishCSR._omp_fn.15	pr	2.497518
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	2.438020
-0	[Others]	N/A	5.366278
-0	Effective Physical Core Utilization	8.0% (3.539 out of 44)
-1	Effective Logical Core Utilization	4.0% (3.540 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	27.471833
+0	PageRankPullGS._omp_fn.0	pr	6.687940
+0	pvector<float>::fill._omp_fn.2	pr	2.787157
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	2.105675
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	2.102135
+0	[Others]	N/A	4.045260
+0	Effective Physical Core Utilization	8.2% (3.596 out of 44)
+1	Effective Logical Core Utilization	4.1% (3.597 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4903446
-1	Collection start time	05:51:29 03/10/2025 UTC
-1	Collection stop time	05:51:44 03/10/2025 UTC
+1	Result Size	4611836
+1	Collection start time	03:13:16 05/10/2025 UTC
+1	Collection stop time	03:13:28 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989999
+2	Frequency	2199989963
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

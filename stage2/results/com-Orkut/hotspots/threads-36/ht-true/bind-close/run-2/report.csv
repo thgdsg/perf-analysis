@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	2.947536
-1	CPU Time	24.289996
-2	Effective Time	24.289996
+0	Elapsed Time	3.023149
+1	CPU Time	23.609995
+2	Effective Time	23.609995
 3	Idle	0.0
-3	Poor	24.289996
+3	Poor	23.609995
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	11.912965
-0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	3.523982
-0	func@0x18e20	libgomp.so.1	2.871381
-0	std::istream::operator>>	libstdc++.so.6	2.007599
-0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	1.204042
-0	[Others]	N/A	2.770027
-0	Effective Physical Core Utilization	18.9% (8.328 out of 44)
-1	Effective Logical Core Utilization	9.5% (8.332 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	12.151391
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	3.391646
+0	func@0x18e20	libgomp.so.1	2.137921
+0	std::istream::operator>>	libstdc++.so.6	2.015464
+0	BuilderBase<int, int, int, (bool)1>::CountDegrees._omp_fn.10	pr	1.220951
+0	[Others]	N/A	2.692623
+0	Effective Physical Core Utilization	18.0% (7.917 out of 44)
+1	Effective Logical Core Utilization	9.0% (7.918 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Orkut/com-Orkut.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	4379814
-1	Collection start time	04:52:55 03/10/2025 UTC
-1	Collection stop time	04:52:58 03/10/2025 UTC
+1	Result Size	4341216
+1	Collection start time	02:46:08 05/10/2025 UTC
+1	Collection stop time	02:46:11 05/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989948
+2	Frequency	2199990034
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected

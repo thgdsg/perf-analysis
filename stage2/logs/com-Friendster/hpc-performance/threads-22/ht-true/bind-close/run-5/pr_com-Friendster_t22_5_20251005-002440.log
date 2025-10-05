@@ -1,0 +1,172 @@
+vtune: Warning: To profile kernel modules during the session, make sure they are available in the /lib/modules/kernel_version/ location.
+vtune: Peak bandwidth measurement started.
+vtune: Peak bandwidth measurement finished.
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /scratch/tsgoncalves/perf-analysis/stage2/results/com-Friendster/hpc-performance/threads-22/ht-true/bind-close/run-5 -command stop.
+Read Time:           0.34434
+Build Time:          0.34710
+Graph has 124736033 nodes and 1442970 directed edges for degree: 0
+Trial Time:          0.26529
+Trial Time:          0.26861
+Trial Time:          0.27395
+Trial Time:          0.26514
+Trial Time:          0.26418
+Trial Time:          0.26340
+Trial Time:          0.27229
+Trial Time:          0.27521
+Trial Time:          0.27016
+Trial Time:          0.26240
+Trial Time:          0.26571
+Trial Time:          0.26986
+Trial Time:          0.26519
+Trial Time:          0.26611
+Trial Time:          0.26770
+Trial Time:          0.27017
+Average Time:        0.26783
+vtune: Collection stopped.
+vtune: Using result path `/scratch/tsgoncalves/perf-analysis/stage2/results/com-Friendster/hpc-performance/threads-22/ht-true/bind-close/run-5'
+vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-31371-blaise.sc' file   vtune: Executing actions 12 % Loading 'systemcollector-31371-blaise.sc' file   vtune: Executing actions 12 % Loading '31391.perf' file                        vtune: Executing actions 12 % Loading '31391.stat.perf' file                   vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for `libgomp.so.1.0.0'     vtune: Executing actions 19 % Resolving information for `pr'                   
+vtune: Warning: Cannot locate debugging information for file `/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr'.
+vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0'.
+vtune: Executing actions 19 % Resolving information for `libahci.ko'           vtune: Executing actions 19 % Resolving information for `libc-2.28.so'         vtune: Executing actions 19 % Resolving information for `libstdc++.so.6.0.25'  
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/4.19.0-25-amd64/kernel/drivers/ata/libahci.ko'.
+vtune: Executing actions 19 % Resolving information for `ld-2.28.so'           
+vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25'.
+vtune: Warning: Cannot locate file `__entry_SYSCALL_64_trampoline.ko'.
+vtune: Executing actions 19 % Resolving information for `__entry_SYSCALL_64_travtune: Executing actions 20 % Resolving information for `__entry_SYSCALL_64_travtune: Executing actions 21 % Resolving information for `__entry_SYSCALL_64_travtune: Executing actions 22 % Resolving information for `__entry_SYSCALL_64_travtune: Executing actions 22 % Resolving information for `vmlinux'              
+vtune: Warning: Cannot locate debugging information for the Linux kernel. Source-level analysis will not be possible. Function-level analysis will be limited to kernel symbol tables. See the Enabling Linux Kernel Analysis topic in the product online help for instructions.
+vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 27 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 31 % Processing profile metrics and debug information vtune: Executing actions 31 % Preparing output tree                            vtune: Executing actions 31 % Parsing columns in input tree                    vtune: Executing actions 32 % Parsing columns in input tree                    vtune: Executing actions 32 % Creating top-level columns                       vtune: Executing actions 32 % Creating top-level rows                          vtune: Executing actions 33 % Creating top-level rows                          vtune: Executing actions 33 % Preparing output tree                            vtune: Executing actions 33 % Parsing columns in input tree                    vtune: Executing actions 33 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level rows                          vtune: Executing actions 35 % Creating top-level rows                          vtune: Executing actions 35 % Preparing output tree                            vtune: Executing actions 35 % Parsing columns in input tree                    vtune: Executing actions 35 % Creating top-level columns                       vtune: Executing actions 36 % Creating top-level columns                       vtune: Executing actions 36 % Creating top-level rows                          vtune: Executing actions 37 % Creating top-level rows                          vtune: Executing actions 37 % Preparing output tree                            vtune: Executing actions 37 % Parsing columns in input tree                    vtune: Executing actions 37 % Creating top-level columns                       vtune: Executing actions 38 % Creating top-level columns                       vtune: Executing actions 38 % Creating top-level rows                          vtune: Executing actions 39 % Creating top-level rows                          vtune: Executing actions 39 % Preparing output tree                            vtune: Executing actions 39 % Parsing columns in input tree                    vtune: Executing actions 39 % Creating top-level columns                       vtune: Executing actions 39 % Creating top-level rows                          vtune: Executing actions 40 % Creating top-level rows                          vtune: Executing actions 40 % Preparing output tree                            vtune: Executing actions 40 % Parsing columns in input tree                    vtune: Executing actions 40 % Creating top-level columns                       vtune: Executing actions 41 % Creating top-level columns                       vtune: Executing actions 41 % Creating top-level rows                          vtune: Executing actions 42 % Creating top-level rows                          vtune: Executing actions 42 % Preparing output tree                            vtune: Executing actions 42 % Parsing columns in input tree                    vtune: Executing actions 42 % Creating top-level columns                       vtune: Executing actions 43 % Creating top-level columns                       vtune: Executing actions 43 % Creating top-level rows                          vtune: Executing actions 44 % Creating top-level rows                          vtune: Executing actions 44 % Preparing output tree                            vtune: Executing actions 44 % Parsing columns in input tree                    vtune: Executing actions 44 % Creating top-level columns                       vtune: Executing actions 45 % Creating top-level columns                       vtune: Executing actions 45 % Creating top-level rows                          vtune: Executing actions 46 % Creating top-level rows                          vtune: Executing actions 46 % Preparing output tree                            vtune: Executing actions 46 % Parsing columns in input tree                    vtune: Executing actions 46 % Creating top-level columns                       vtune: Executing actions 46 % Creating top-level rows                          vtune: Executing actions 47 % Creating top-level rows                          vtune: Executing actions 47 % Preparing output tree                            vtune: Executing actions 47 % Parsing columns in input tree                    vtune: Executing actions 48 % Parsing columns in input tree                    vtune: Executing actions 48 % Creating top-level columns                       vtune: Executing actions 48 % Creating top-level rows                          vtune: Executing actions 49 % Creating top-level rows                          vtune: Executing actions 49 % Preparing output tree                            vtune: Executing actions 49 % Parsing columns in input tree                    vtune: Executing actions 49 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Preparing output tree                            vtune: Executing actions 50 % Parsing columns in input tree                    vtune: Executing actions 50 % Creating top-level columns                       vtune: Executing actions 50 % Creating top-level rows                          vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 50 % Precomputing frequently used data                vtune: Executing actions 50 % Precomputing frequently used data                vtune: Executing actions 50 % Updating precomputed scalar metrics              vtune: Executing actions 50 % Discarding redundant overtime data               vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 5.808s
+    SP GFLOPS: 3.392
+    DP GFLOPS: 0.809
+    x87 GFLOPS: 0.000
+    CPI Rate: 1.324
+     | The CPI may be too high. This could be caused by issues such as memory
+     | stalls, instruction starvation, branch misprediction or long latency
+     | instructions. Explore the other hardware-related metrics to identify what
+     | is causing high CPI.
+     |
+    Average CPU Frequency: 2.810 GHz 
+    Total Thread Count: 22
+Effective Physical Core Utilization: 38.4% (16.876 out of 44)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 19.2% (16.936 out of 88)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Memory Bound: 57.6% of Pipeline Slots
+ | The metric value is high. This can indicate that the significant fraction of
+ | execution pipeline slots could be stalled due to demand memory load and
+ | stores. Use Memory Access analysis to have the metric breakdown by memory
+ | hierarchy, memory bandwidth information, correlation by memory objects.
+ |
+    Cache Bound: 31.0% of Clockticks
+     | A significant proportion of cycles are being spent on data fetches from
+     | caches. Check Memory Access analysis to see if accesses to L2 or L3
+     | caches are problematic and consider applying the same performance tuning
+     | as you would for a cache-missing workload. This may include reducing the
+     | data working set size, improving data access locality, blocking or
+     | partitioning the working set to fit in the lower cache levels, or
+     | exploiting hardware prefetchers. Consider using software prefetchers, but
+     | note that they can interfere with normal loads, increase latency, and
+     | increase pressure on the memory system. This metric includes coherence
+     | penalties for shared data. Check Microarchitecture Exploration analysis
+     | to see if contested accesses or data sharing are indicated as likely
+     | issues.
+     |
+    DRAM Bound: 29.1% of Clockticks
+     | The metric value is high. This indicates that a significant fraction of
+     | cycles could be stalled on the main memory (DRAM) because of demand loads
+     | or stores.
+     |
+     | The code is memory bandwidth bound, which means that there are a
+     | significant fraction of cycles during which the bandwidth limits of the
+     | main memory are being reached and the code could stall. Review the
+     | Bandwidth Utilization Histogram to estimate the scale of the issue.
+     | Improve data accesses to reduce cacheline transfers from/to memory using
+     | these possible techniques: 1) consume all bytes of each cacheline before
+     | it is evicted (for example, reorder structure elements and split non-hot
+     | ones); 2) merge compute-limited and bandwidth-limited loops; 3) use NUMA
+     | optimizations on a multi-socket system.
+     |
+     | The code is latency bound, which means that there are a significant
+     | fraction of cycles during which the code could be stalled due to main
+     | memory latency. Consider optimizing data layout or using software
+     | prefetches through the compiler to improve cache reuse and to reduce the
+     | data fetched from the main memory.
+     |
+        DRAM Bandwidth Bound: 42.9% of Elapsed Time
+         | The system spent much time heavily utilizing DRAM bandwidth. Improve
+         | data accesses to reduce cacheline transfers from/to memory using
+         | these possible techniques: 1) consume all bytes of each cacheline
+         | before it is evicted (for example, reorder structure elements and
+         | split non-hot ones); 2) merge compute-limited and bandwidth-limited
+         | loops; 3) use NUMA optimizations on a multi-socket system. Note:
+         | software prefetches do not help a bandwidth-limited application. Run
+         | Memory Access analysis to identify data structures to be allocated in
+         | High Bandwidth Memory (HBM), if available.
+         |
+    NUMA: % of Remote Accesses: 0.0%
+
+    Bandwidth Utilization
+    Bandwidth Domain             Platform Maximum  Observed Maximum  Average  % of Elapsed Time with High BW Utilization(%)
+    ---------------------------  ----------------  ----------------  -------  ---------------------------------------------
+    DRAM, GB/sec                 168                         97.200   45.142                                           0.0%
+    DRAM Single-Package, GB/sec  84                          97.100   45.049                                          42.9%
+    QPI Outgoing, GB/sec         68                           8.700    1.061                                           0.0%
+Vectorization: 0.0% of Packed FP Operations
+ | A significant fraction of floating point arithmetic instructions are scalar.
+ | Use Intel Advisor to see possible reasons why the code was not vectorized.
+ |
+    Instruction Mix
+        SP FLOPs: 8.7% of uOps
+            Packed: 0.0% from SP FP
+                128-bit: 0.0% from SP FP
+                256-bit: 0.0% from SP FP
+            Scalar: 100.0% from SP FP
+             | This code has floating point operations and is not vectorized.
+             | Consider using Intel Advisor to vectorize the loops.
+             |
+        DP FLOPs: 2.1% of uOps
+            Packed: 0.0% from DP FP
+                128-bit: 0.0% from DP FP
+                256-bit: 0.0% from DP FP
+            Scalar: 100.0% from DP FP
+             | This code has floating point operations and is not vectorized.
+             | Consider using Intel Advisor to vectorize the loops.
+             |
+        x87 FLOPs: 0.0% of uOps
+        Non-FP: 89.3% of uOps
+    FP Arith/Mem Rd Instr. Ratio: 0.507
+    FP Arith/Mem Wr Instr. Ratio: 1.287
+Collection and Platform Info
+    Application Command Line: /scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
+    Operating System: 4.19.0-25-amd64 10.13
+    Computer Name: blaise
+    Result Size: 36.1 MB 
+    Collection start time: 03:24:50 05/10/2025 UTC
+    Collection stop time: 03:24:56 05/10/2025 UTC
+    Collector Type: Driverless Perf per-process sampling
+    CPU
+        Name: Intel(R) Xeon(R) Processor code named Broadwell
+        Frequency: 2.200 GHz 
+        Logical CPU Count: 88
+        Max DRAM Single-Package Bandwidth: 84.000 GB/s
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
+vtune: Executing actions 100 % Generating a report                             vtune: Executing actions 100 % done                                            

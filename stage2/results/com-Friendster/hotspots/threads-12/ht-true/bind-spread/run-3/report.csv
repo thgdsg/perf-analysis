@@ -1,9 +1,9 @@
 Hierarchy Level	Metric Name	Metric Value
-0	Elapsed Time	6.481508
-1	CPU Time	70.439977
-2	Effective Time	70.439977
-3	Idle	0.020000
-3	Poor	70.419977
+0	Elapsed Time	8.252553
+1	CPU Time	79.010000
+2	Effective Time	79.010000
+3	Idle	0.030000
+3	Poor	78.980000
 3	Ok	0.0
 3	Ideal	0.0
 3	Over	0.0
@@ -13,25 +13,25 @@ Hierarchy Level	Metric Name	Metric Value
 1	Paused Time	0.0
 0	Top Hotspots	
 0	Function	Module	CPU Time
-0	PageRankPullGS._omp_fn.1	pr	54.735755
-0	PageRankPullGS._omp_fn.0	pr	5.694639
-0	pvector<float>::fill._omp_fn.2	pr	2.396532
-0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	2.188674
-0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	1.473337
-0	[Others]	N/A	3.951039
-0	Effective Physical Core Utilization	24.6% (10.828 out of 44)
-1	Effective Logical Core Utilization	12.3% (10.829 out of 88)
+0	PageRankPullGS._omp_fn.1	pr	55.428538
+0	PageRankPullGS._omp_fn.0	pr	8.873494
+0	CSRGraph<int, int, (bool)1>::GenIndex._omp_fn.3	pr	3.222032
+0	pvector<float>::fill._omp_fn.2	pr	3.181736
+0	BuilderBase<int, int, int, (bool)1>::ParallelPrefixSum._omp_fn.12	pr	3.113304
+0	[Others]	N/A	5.190896
+0	Effective Physical Core Utilization	21.9% (9.617 out of 44)
+1	Effective Logical Core Utilization	10.9% (9.619 out of 88)
 0	Collection and Platform Info	
 1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/com-Friendster/com-Friendster.el" "-i" "500" "-t" "1e-6" 
 1	Operating System	4.19.0-25-amd64 10.13
 1	Computer Name	blaise
-1	Result Size	5105882
-1	Collection start time	22:06:07 02/10/2025 UTC
-1	Collection stop time	22:06:13 02/10/2025 UTC
+1	Result Size	5306186
+1	Collection start time	23:23:35 04/10/2025 UTC
+1	Collection stop time	23:23:44 04/10/2025 UTC
 1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
 1	CPU	
 2	Name	Intel(R) Xeon(R) Processor code named Broadwell
-2	Frequency	2199989979
+2	Frequency	2199989996
 2	Logical CPU Count	88
 2	Cache Allocation Technology	
 3	Level 2 capability	not detected
