@@ -40,12 +40,12 @@ Quanto ao Intel VTune, pretendemos utilizar os seguintes tipos de análise dispo
     - Saída: resumo HPC, roofline, breakdown compute vs memory bound, métricas de paralelismo (OpenMP/MPI).
 
 - **hotspots**:
-- O que mede: tempo de CPU por função/arquivo/linha, uso de CPU ao longo do tempo, pilhas de chamadas, divisão user/kernel, e (opcional) eventos de HW.
-- Quando usar: primeira análise focada no código. Serve para localizar funções críticas, laços não vetorizados, spin/wait e regressões.
-- Como funciona: amostragem por interrupções (baixa sobrecarga). Com símbolos (-g) mostra nomes de funções e linhas; com PGO/strip pode precisar de -fno-omit-frame-pointer para melhores stacks.
-- O que olhar:
-    - Top Functions/Call Tree: funções com maior CPU Time e seus callers/callees.
-    - Source/Assembly: linhas críticas e possíveis gargalos (branching, falta de vetor).
-    - Timeline: saturação da CPU e fases do programa.
-- Integração com OpenMP: mostra regiões paralelas, desequilíbrio entre threads e tempo gasto em runtimes/barreiras.
+    - O que mede: tempo de CPU por função/arquivo/linha, uso de CPU ao longo do tempo, pilhas de chamadas, divisão user/kernel, e (opcional) eventos de HW.
+    - Quando usar: primeira análise focada no código. Serve para localizar funções críticas, laços não vetorizados, spin/wait e regressões.
+    - Como funciona: amostragem por interrupções (baixa sobrecarga). Com símbolos (-g) mostra nomes de funções e linhas; com PGO/strip pode precisar de -fno-omit-frame-pointer para melhores stacks.
+    - O que olhar:
+        - Top Functions/Call Tree: funções com maior CPU Time e seus callers/callees.
+        - Source/Assembly: linhas críticas e possíveis gargalos (branching, falta de vetor).
+        - Timeline: saturação da CPU e fases do programa.
+    - Integração com OpenMP: mostra regiões paralelas, desequilíbrio entre threads e tempo gasto em runtimes/barreiras.
 
