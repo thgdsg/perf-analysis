@@ -5,7 +5,8 @@
 
 import csv
 
-csv_file = "./experiments_noHT.csv"
+# Ajuste: usar o CSV que contém VTUNE_ENABLE
+csv_file = "./experiments_noVTune.csv"
 
 def create_build_commands(csv_file):
     commands = []
@@ -24,8 +25,10 @@ def create_build_commands(csv_file):
             logs_gapbs = row[header.index("LOGS_GAPBS")].strip()
             vtune_enable = row[header.index("VTUNE_ENABLE")].strip()
 
-            # Loop para criar 5 execuções para cada linha do CSV
-            for i in range(1, 6):
+            # 5 execuções se VTune ligado, 10 se desligado
+            total_runs = 5 if vtune_enable.lower() == "true" else 10
+
+            for i in range(1, total_runs + 1):
                 command = (
                     f"./src/executa_bench.sh "
                     f"-graph-name {graph_name} "
@@ -37,12 +40,10 @@ def create_build_commands(csv_file):
                     f"-disable-hyperthreading {disable_hyperthreading} "
                     f"-thread-bind-policy {thread_bind_policy} "
                     f"-vtune-enable {vtune_enable} "
-                    f"-run-id {i}"  # Adiciona o ID da execução
+                    f"-run-id {i}"
                 )
-
                 if logs_gapbs.lower() == 'true':
                     command += " -gap-logs"
-
                 commands.append(command)
     return commands
 
