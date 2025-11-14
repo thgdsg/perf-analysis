@@ -68,6 +68,7 @@ chmod +x ./perf_analysis_pr.sh || true
 echo "[INFO] Copiando resultados de $PROJECT_DIR/results para $HOME_RESULTS_DIR"
 mkdir -p "$HOME_RESULTS_DIR"
 cp -r "$PROJECT_DIR"/results "$HOME_RESULTS_DIR"/
+cp -r "$PROJECT_DIR"/logs "$HOME_RESULTS_DIR"/
 
 python3 ./src/unify_all_results.py
 echo "[INFO] Job finalizado com sucesso."
