@@ -233,6 +233,7 @@ if [[ "$VTUNE_ENABLE" == "true" ]]; then
 else
   # Execução sem VTune; aplica taskset quando HT off
   if [[ "$DISABLE_HYPERTHREADING" == "true" ]]; then
+    echo "EXECUTANDO SEM VTUNE"
     echo "[INFO] HT off via taskset em CPUs: $cpu_list"
     cmd=( taskset -c "$cpu_list" "$gapbs_dir/$KERNEL" -f "$el_path" -i "$MAX_ITERS" -t "$TOLERANCE" )
   else

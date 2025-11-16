@@ -65,7 +65,7 @@ def calcular_speedup_parallel_efficiency(dic_key):
     df.loc[filtro, "SPEEDUP"] = speed_up
     df.loc[filtro, "PARALLEL_EFFICIENCY"] = parallel_efficiency
 
-    df.to_csv("unified_results.csv", sep="," , index=False)
+    df.to_csv("Vtune_DISABLED_unified_results.csv", sep="," , index=False)
 
 
 def main():

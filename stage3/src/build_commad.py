@@ -7,6 +7,7 @@ import csv
 
 # Ajuste: usar o CSV que contém VTUNE_ENABLE
 csv_file = "./experiments_noVTune.csv"
+print(f"Using CSV file: {csv_file}")
 
 def create_build_commands(csv_file):
     commands = []

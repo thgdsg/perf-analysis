@@ -25,10 +25,10 @@ if [[ -z "${SCRATCH:-}" ]]; then
 fi
 
 # Diretório de destino para os resultados no HOME
-HOME_RESULTS_DIR="${HOME}/perf-analysis/stage3"
+HOME_RESULTS_DIR="${HOME}/resultados-perf-analysis/stage3"
 
 # Diretório do repositório no SCRATCH
-REPO_DIR_IN_SCRATCH="${SCRATCH}/perf-analysis"
+REPO_DIR_IN_SCRATCH="${SCRATCH}perf-analysis"
 
 # Remove o diretório do repositório se ele já existir para garantir uma cópia limpa
 if [[ -d "$REPO_DIR_IN_SCRATCH" ]]; then
