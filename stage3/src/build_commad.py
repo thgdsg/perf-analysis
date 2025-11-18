@@ -43,7 +43,8 @@ def create_build_commands(csv_file):
                     f"-vtune-enable {vtune_enable} "
                     f"-run-id {i}"
                 )
-                if logs_gapbs.lower() == 'true':
+                # Só liga logs se o VTune estiver habilitado
+                if logs_gapbs.lower() == 'true' and vtune_enable.lower() == 'true':
                     command += " -gap-logs"
                 commands.append(command)
     return commands

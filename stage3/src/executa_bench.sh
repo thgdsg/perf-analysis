@@ -161,6 +161,11 @@ get_graph_data() {
 # Executa o parse dos argumentos
 parse_arguments "$@"
 
+# Se VTune desabilitado, captura todo o output em logs (ignora -gap-logs)
+if [[ "$VTUNE_ENABLE" == "false" ]]; then
+  ENABLE_LOGS=true
+fi
+
 # Valida parâmetros obrigatórios
 validate_required_params
 

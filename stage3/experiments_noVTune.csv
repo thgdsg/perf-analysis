@@ -1,4 +1,4 @@
-trueGRAPH_NAME,GRAPH_URL,THREADS,MAX_ITERS,TOLERANCE,ANALYSIS_TYPE,DISABLE_HYPERTHREADING,THREAD_BIND_POLICY,LOGS_GAPBS,VTUNE_ENABLE
+GRAPH_NAME,GRAPH_URL,THREADS,MAX_ITERS,TOLERANCE,ANALYSIS_TYPE,DISABLE_HYPERTHREADING,THREAD_BIND_POLICY,LOGS_GAPBS,VTUNE_ENABLE
 web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,1,500,1e-6,performance-snapshot,true,spread,true,false
 web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,1,500,1e-6,performance-snapshot,false,spread,true,false
 web-Google,https://snap.stanford.edu/data/web-Google.txt.gz,1,500,1e-6,hotspots,true,spread,true,false
