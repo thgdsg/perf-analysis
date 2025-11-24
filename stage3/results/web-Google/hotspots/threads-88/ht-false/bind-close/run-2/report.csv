@@ -1,0 +1,38 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	1.408812
+1	CPU Time	49.950000
+2	Effective Time	49.950000
+3	Idle	0.0
+3	Poor	5.064621
+3	Ok	4.237325
+3	Ideal	40.648054
+3	Over	0.0
+2	Spin Time	0.0
+2	Overhead Time	0.0
+1	Total Thread Count	88
+1	Paused Time	0.0
+0	Top Hotspots	
+0	Function	Module	CPU Time
+0	func@0x18e20	libgomp.so.1	23.728035
+0	PageRankPullGS._omp_fn.1	pr	16.775782
+0	func@0x18c90	libgomp.so.1	4.550143
+0	BuilderBase<int, int, int, (bool)1>::MakeCSR._omp_fn.14	pr	1.967689
+0	pvector<EdgePair<int, int>>::reserve._omp_fn.4	pr	0.890000
+0	[Others]	N/A	2.038352
+0	Effective Physical Core Utilization	41.2% (18.120 out of 44)
+1	Effective Logical Core Utilization	40.6% (35.707 out of 88)
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Google/web-Google.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	4917403
+1	Collection start time	01:06:12 03/10/2025 UTC
+1	Collection stop time	01:06:13 03/10/2025 UTC
+1	Collector Type	Driverless Perf per-process counting,User-mode sampling and tracing
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199989849
+2	Logical CPU Count	88
+2	Cache Allocation Technology	
+3	Level 2 capability	not detected
+3	Level 3 capability	available
