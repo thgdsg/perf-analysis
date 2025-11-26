@@ -1,0 +1,60 @@
+Hierarchy Level	Metric Name	Metric Value
+0	Elapsed Time	1.220343
+1	IPC	0.439903
+1	SP GFLOPS	3.237441
+1	DP GFLOPS	0.333497
+1	x87 GFLOPS	0.008778
+1	Average CPU Frequency	2808261268.281914
+0	Effective Logical Core Utilization	44.6% (39.273 out of 88)
+1	Effective Physical Core Utilization	45.2% (19.878 out of 44)
+0	Microarchitecture Usage	31.2
+1	Retiring	31.2
+1	Front-End Bound	15.6
+1	Back-End Bound	48.0
+2	Memory Bound	33.0
+2	Core Bound	15.0
+1	Bad Speculation	5.3
+0	Memory Bound	33.0
+1	L1 Bound	14.6
+1	L2 Bound	5.0
+1	L3 Bound	20.4
+1	DRAM Bound	3.4
+2	DRAM Bandwidth Bound	0.0
+1	Store Bound	6.1
+1	NUMA: % of Remote Accesses	48.4
+0	Vectorization	0.0
+1	Instruction Mix	
+2	SP FLOPs	4.6
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	DP FLOPs	0.5
+3	Packed	0.0
+4	128-bit	0.0
+4	256-bit	0.0
+3	Scalar	100.0
+2	x87 FLOPs	0.0
+2	Non-FP	94.9
+1	FP Arith/Mem Rd Instr. Ratio	0.287094
+1	FP Arith/Mem Wr Instr. Ratio	2.067340
+0	Collection and Platform Info	
+1	Application Command Line	/scratch/tsgoncalves/perf-analysis/stage2/src/gapbs/pr "-f" "./data/web-Google/web-Google.el" "-i" "500" "-t" "1e-6" 
+1	Operating System	4.19.0-25-amd64 10.13
+1	Computer Name	blaise
+1	Result Size	3618280
+1	Collection start time	17:36:38 02/10/2025 UTC
+1	Collection stop time	17:36:40 02/10/2025 UTC
+1	Collector Type	Driverless Perf per-process counting
+1	CPU	
+2	Name	Intel(R) Xeon(R) Processor code named Broadwell
+2	Frequency	2199989873
+2	Logical CPU Count	88
+2	Max DRAM Single-Package Bandwidth	89000000000.000000
+2	Cache Allocation Technology	
+3	Level 2 capability	not detected
+3	Level 3 capability	available
+0	Recommendations:
+1	Hotspots	Start with Hotspots analysis to understand the efficiency of your algorithm.	Use Hotspots analysis to identify the most time consuming functions. Drill down to see the time spent on every line of code.
+1	Memory Access	The Memory Bound metric is high  (33.0%). A significant fraction of execution pipeline slots could be stalled due to demand memory load and stores. 	Use Memory Access analysis to measure metrics that can identify memory access issues.
+1	Threading	There is poor utilization of logical CPU cores (44.6%) in your application. 	 Use Threading to explore more opportunities to increase parallelism in your application.
