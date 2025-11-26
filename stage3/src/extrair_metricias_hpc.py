@@ -3,21 +3,24 @@ from typing import List, Optional, Tuple
 
 import pandas as pd
 
-# Diretório base: stage3 (um nível acima de src)
-BASE_DIR = Path(__file__).parent.parent
+# Diretório base no Colab
+BASE_DIR = Path("/content/perf-analysis/stage3")
 RESULTS_ROOT = BASE_DIR / "results"
 OUTPUT_CSV = BASE_DIR / "hpc_hw_metrics.csv"
 
-def extrair_infos_caminho(rel_path_parts: List[str]) -> Optional[Tuple[str, int, str, str, int]]:
+def extrair_infos_caminho(rel_path_parts: List[str]) -> Optional[Tuple[str, int, bool, str, int]]:
     """
     Recebe as partes do caminho relativo a 'results' e extrai:
       GRAPH_NAME, THREADS, DISABLE_HYPERTHREADING, THREAD_BIND_POLICY, RUN.
 
     Espera algo do tipo:
       [GRAPH_NAME, ANALYSIS_TYPE, 'threads-X',
-       'disable-ht-true|false', 'bind-<policy>', 'run-N']
+       'ht-true|ht-false', 'bind-<policy>', 'run-N']
 
     ANALYSIS_TYPE é usado apenas para filtrar 'hpc-performance'.
+    
+    Nota: ht-true significa que o HT foi DESATIVADO (disable_ht=True)
+          ht-false significa que o HT está ATIVADO (disable_ht=False)
     """
     if len(rel_path_parts) < 6:
         return None
@@ -45,12 +48,14 @@ def extrair_infos_caminho(rel_path_parts: List[str]) -> Optional[Tuple[str, int,
         if ht_dir.startswith("ht-"):
             # Formato: "ht-true" ou "ht-false"
             ht_value = ht_dir.split("-")[1]
-            # ht-true significa hyperthreading ativado, então disable_ht = false
-            # ht-false significa hyperthreading desativado, então disable_ht = true
-            disable_ht = "false" if ht_value == "true" else "true"
+            # ht-true significa que o HT foi DESATIVADO, então disable_ht = True
+            # ht-false significa que o HT está ATIVADO, então disable_ht = False
+            disable_ht = ht_value == "true"
         elif ht_dir.startswith("disable-ht-"):
             # Formato antigo: "disable-ht-false" -> ["disable", "ht", "false"]
-            disable_ht = ht_dir.split("-")[2]
+            # Converte string "true"/"false" para boolean
+            disable_ht_str = ht_dir.split("-")[2]
+            disable_ht = disable_ht_str == "true"
         else:
             return None
     except Exception:
@@ -113,7 +118,7 @@ def extrair_metricas_hpc(report_path: str) -> Optional[Tuple[float, float, float
     return avg_cpu_freq, mem_bound, cache_bound, dram_bound
 
 
-# ===== Execução principal =====
+# ===== Execução principal no Colab =====
 
 if not RESULTS_ROOT.is_dir():
     raise FileNotFoundError(f"Pasta de resultados não encontrada: {RESULTS_ROOT}")
@@ -190,5 +195,12 @@ else:
     print(f"Total de configurações hpc-performance agregadas: {len(df_group)}")
     print(f"CSV gerado em: {OUTPUT_CSV}")
     print(f"\nAmostra dos dados:")
-    print(df_group.head())
+
+    # Usa display() no Colab para melhor visualização
+    try:
+        from IPython.display import display
+        display(df_group.head())
+    except ImportError:
+        # Se não estiver no Colab, usa print normal
+        print(df_group.head())
 
