@@ -1,0 +1,360 @@
+%% main.tex adaptado para o template Inf da UFRGS
+%% Conteúdo original de João Vitor Spolavore e Thiago Gonçalves
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+\PassOptionsToPackage{table,dvipsnames}{xcolor}
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{booktabs} % For better tables
+\usepackage{graphicx}
+\usepackage{booktabs} 
+\usepackage{multirow}
+
+% Choose the Inf theme
+\usetheme{Inf}
+
+% Define the title with \title[short title]{long title}
+\title[Avaliação PageRank]{Avaliação de desempenho do algoritmo PageRank sequencial e paralelo}
+
+\date{\today}
+
+% Author information
+\author{João Vitor Spolavore \and Thiago Gonçalves}
+\institute{Instituto de Informática --- UFRGS}
+
+\begin{document}
+
+% Command to create title page
+\InfTitlePage
+
+
+\section{Introdução}
+\begin{frame}{Introdução}
+    O presente relatório tem como objetivo analisar o comportamento do sistema ao aplicar o algoritmo PageRank sob diferentes níveis de paralelismo, avaliando como o aumento do número de threads impacta seu desempenho.\\
+    \vspace{0.5em}
+\end{frame}
+
+\section{Ambiente de Teste}
+\begin{frame}{Máquina Utilizada}
+    Todos os experimentos realizados foram executados no Parque de Computação de Alto Desempenho (PCAD) da Universidade Federal do Rio Grande do Sul (UFRGS).
+    Utilizamos o nó computacional denominado \textit{blaise}.
+
+    \subsection*{Características da Máquina}
+    \begin{itemize}
+        \item \textbf{Nome:} blaise
+        \item \textbf{CPU:} 2 x Intel(R) Xeon(R) E5-2699 v4, 2.20 GHz, 88 threads, 44 cores
+        \item \textbf{RAM:} 256GB 
+        \item \textbf{Disco:} 1.8 TB SSD, 1.8 TB HDD
+        \item \textbf{Placa mãe:} Supermicro X10DGQ
+    \end{itemize}
+    \url{https://gppd-hpc.inf.ufrgs.br}\\
+    \vspace{0.6em}
+    Esta máquina possui DOIS processadores Intel, fundamental para a escolha devido às possibilidades de experimentos com distribuição de threads.
+\end{frame}
+
+\section{Método de análise e coleta de dados}
+\begin{frame}{Método de análise}
+    O presente projeto apresenta uma perspectiva de medição para o método de análise.\\
+    \vspace{0.5em}
+    Para ajudar nessa abordagem, utilizamos o Intel Vtune Profiler para coletar métricas de hardware da aplicação. Decidimos utilizar essa ferramenta pois:
+    \vspace{0.5em}
+    \begin{itemize}
+        \item Os processadores presentes na máquina escolhida eram Intel.
+        \item É uma ferramenta amplamente utilizada pela própria Intel para obter métricas de seus processadores.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Definição dos experimentos}
+    Escolhemos utilizar o governor DVFS \textit{performance} com o comando \texttt{cpufreq-set -g performance}. \\
+    \vspace{0.5em}
+    A fim de centralizar todos as instâncias dos experimentos desejados e automatizar o processo de execução através de scripts, criamos um csv contendo a definição de todos os nossos experimentos denominado experiments.csv.\\
+    \vspace{0.5em}
+    Para obter o tempo de execução da programa (\textit{Elapsed time}) não utilizamos o profiler da Intel. Uma vez que a sua utilização adiciona um \textit{overhead} significativo nessa métrica.\\
+    \vspace{0.5em} 
+    Executamos cada configuração 5 vezes utilizando o Vtune e 10 vezes sem a utilização do profiler. 
+\end{frame}
+
+
+\begin{frame}{Parâmetros Considerados}
+    Consideramos as seguintes opções para análise:
+    \begin{itemize}
+        \item \textbf{Número de Threads}: {1, 4, 12, 22, 28, 36, 44, 66, 88}.
+        \item \textbf{Tipo de Análise feita pelo Profiler}: {hpc-performance, hotspots, performance-snapshot}.
+        Importante para obter informações referentes a hardware, como por exemplo taxa de ciclos por instrução , utilização da memória entre outros.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Parâmetros Considerados (cont.)}
+    \begin{itemize}
+        \item \textbf{Estado do Hyperthreading (ON/OFF)}: Com o objetivo de avaliar o impacto no desempenho, forçamos 1 thread por core com a variável \texttt{OMP\_PLACES=cores/threads} e reduzimos visibilidade de threads lógicas com \texttt{GOMP\_CPU\_AFFINITY} e o comando \texttt{taskset -c [NÚMEROS DOS CORES]}.
+        \item \textbf{Política de \textit{Binding} de Threads}: Analisa o impacto da distribuição de threads entre os dois processadores via \texttt{OMP\_PROC\_BIND} com essas opções:
+        \begin{itemize}
+            \item \texttt{close}: Vincula threads a lugares próximos à thread pai, útil para localidade de cache.
+            \item \texttt{spread}: Distribui threads em partições mais distantes, útil para reduzir contenção em recursos compartilhados.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Algoritmo e Dados}
+
+\begin{frame}
+    \frametitle{Algoritmo e Fonte de Dados}
+
+    \begin{itemize}
+        \item \textbf{Algoritmo:} Utilizamos uma implementação consolidada do PageRank do repositório GAPBS (\url{https://github.com/sbeamer/gapbs}).
+        \item \textbf{Fonte dos Dados:} Os grafos foram obtidos da \textit{Stanford Large Network Dataset Collection} (SNAP), um repositório consagrado academicamente (\url{https://snap.stanford.edu/data/index.html}).
+        \item \textbf{Requisito:} Para executar o algoritmo PageRank, a aplicação recebe como entrada grafos \textbf{direcionados}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grafos Utilizados}
+
+    A tabela abaixo detalha as redes de grafos escolhidas para os experimentos:
+
+    \centering
+    \begin{tabular}{lrr}
+        \toprule
+        \textbf{Grafo} & \textbf{Vértices} & \textbf{Arestas} \\
+        \midrule
+        Friendster     & 65,608,366        & 1,806,067,135    \\
+        LiveJournal    & 3,997,962         & 34,681,189       \\
+        Orkut          & 3,072,441         & 117,185,083      \\
+        BerkStan       & 685,230           & 7,600,595        \\
+        Google         & 875,713           & 5,105,039        \\
+        NotreDame      & 325,729           & 1,497,134        \\
+        Stanford       & 281,903           & 2,312,497        \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{1em} % Adiciona um espaço vertical
+    Todos representam conexões entre páginas web e/ou redes sociais e são dados do mundo real.
+
+\end{frame}
+
+\section{Resultados}
+
+\begin{frame}{Métricas brutas do \textit{Intel VTune Profiler}}
+        Primeiro, mostraremos as métricas brutas do \textit{Intel Vtune Profiler}.
+        Vamos iniciar vendo o gráfico de Frequência Média da CPU durante a execução do algoritmo.
+
+        Nesse gráfico, os pontos representam todos os grafos de entrada, com as 4 seguintes configurações:
+        \begin{enumerate}
+            \item Hyperthreading Desligado, Política Spread - \textbf{HT\_OFF\_spread}
+            \item Hyperthreading Ligado, Política Spread - \textbf{HT\_ON\_spread}
+            \item Hyperthreading Desligado, Política Close - \textbf{HT\_OFF\_close}
+            \item Hyperthreading Ligado, Política Close - \textbf{HT\_ON\_close}
+        \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frequência Média da CPU}
+
+    \begin{figure}
+        \centering
+        \makebox[\textwidth][c]{%
+
+        \includegraphics[width=0.95\paperwidth]{graficos/combined_average_cpu_frequency_all_graphs_scatter.pdf}
+        }
+    \end{figure}
+    % insira comentario aqui
+    \centering
+\end{frame}
+
+\begin{frame}{Explicação das Tabelas Combinadas}
+        Como o tempo de nossa apresentação é limitado, apenas apresentaremos a análise para uma entrada da aplicação.
+
+        Agora mostraremos as tabelas de \textit{Memory Bound} e ciclos por instrução.
+        
+        \textit{Memory Bound} é a porcentagem de tempo perdido esperando operações na memória.
+
+        Ciclos por instrução (CPI) é uma média total de ciclos pra cada instrução do programa.
+        
+\end{frame}
+
+\begin{frame}{Tabela de \textit{Memory Bound} (\%)}
+    \resizebox{\textwidth}{!}{%
+        \input{tabelas/memory-bound_combined_highlighted.tex}
+    }
+    \begin{itemize}
+    \item Nenhuma única entrada obteve a maior ou menor taxa de ciclos ociosos esperando por operações na memória, sendo um padrão que se repete ao longo de todas as entradas.
+
+    \item Além disso, por mais que seja possível observar que nesse caso os melhores \textit{Memory Bound} estavam com menos \textit{threads} e os piores com mais, esse comportamento não se repete com todas as entradas.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Tabela de Ciclos por Instrução}
+    \resizebox{\textwidth}{!}{%
+        \input{tabelas/cpi-rate_combined_highlighted}
+    }
+
+    \begin{itemize}
+    \item O comportamento de ciclos por instrução se repetiu ao longo de todas as entradas.
+
+    \item O grafo Friendster foi uma exceção, com os outros grafos possuindo o maior CPI com o \textit{Hyperthreading} desligado ao executar com 44 \textit{threads}.
+
+    \item Achamos que pode ser por causa do grande tamanho do grafo e altos volumes de transferência de dados.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Análise do \textit{Speedup}}
+    O gráfico a seguir mostra o \textit{speedup} para o grafo com-Friendster, o maior grafo em que realizamos nossos experimentos, com intervalo de confiança de 95\% entre cada ponto.
+    
+    Nesse gráfico, os pontos representam todos os grafos de entrada, com as 4 seguintes configurações:
+    \begin{enumerate}
+        \item \textbf{HT\_OFF\_spread}
+        \item \textbf{HT\_ON\_spread}
+        \item \textbf{HT\_OFF\_close}
+        \item \textbf{HT\_ON\_close}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Speedup - Friendster}
+
+    \begin{figure}
+        \centering
+        \makebox[\textwidth][c]{%
+        \includegraphics[width=0.95\paperwidth]{graficos/speedup_per_run_with_ci_com-Friendster.pdf}
+        }        
+    \end{figure}
+    \centering
+\end{frame}
+
+\begin{frame}{Speedup - Friendster}
+    \begin{itemize}
+        \item Melhor caso executando com \textit{Hyperthreading} desligado e política \textit{close} - visto também em outras entradas.
+        \item Diferente de outras entradas, o caso com \textit{Hyperthreading} liagdo e política \textit{close} tambem se saiu bem. Achamos que pode ser relacionado com a eficiência térmica em grafos maiores.
+    \end{itemize}
+        
+\end{frame}
+
+\begin{frame}{Análise Estatística - Correlação Spearman}
+    \begin{figure}
+        \centering
+        \makebox[\textwidth][c]{%
+        \includegraphics[width=0.85\linewidth]{graficos/correlacao_spearman.pdf}
+        }        
+    \end{figure}
+    \centering
+        
+\end{frame}
+
+\begin{frame}{Análise Estatística - \textit{Feature Importance}}
+    \begin{figure}
+        \centering
+        \makebox[\textwidth][c]{%
+        \includegraphics[width=\linewidth]{graficos/feature_importance.pdf}
+        }
+    \end{figure}
+    \centering
+    \begin{itemize}
+        \item A frequência da CPU é o que mais importa pro \textit{speedup} (estando correlacionada negativamente).
+        \item Atrasos na memória afetam mais o \textit{speedup} do que o CPI.
+    \end{itemize}
+        
+\end{frame}
+
+\begin{frame}{Análise Estatística - ANOVA 1}
+    Por fim, fizemos uma análise com ANOVA, tentando associar nossas variáveis de entrada com as saídas do \textit{Intel Vtune}
+
+    Assim, resultados com \textit{p-value} menor que 0.05 (5\%) estão marcados em verde e significam que a variável possui um impacto estatisticamente signficativo naquela métrica.
+        
+\end{frame}
+
+\begin{frame}{Análise Estatística - ANOVA 2}
+    \centering
+    \resizebox{0.8\textwidth}{!}{%
+    \input{tabelas/anova_average_cpu_frequency}
+    }
+    
+    ANOVA pra Frequência média da CPU
+    
+    
+    \resizebox{0.8\textwidth}{!}{%
+        \input{tabelas/anova_cpi_rate}
+    }
+    
+    ANOVA pra taxa de ciclos por instrução
+
+        
+\end{frame}
+
+\begin{frame}{Análise Estatística - ANOVA 3}
+    \centering
+    \resizebox{0.8\textwidth}{!}{%
+        \input{tabelas/anova_memory_bound}
+    }
+    
+    ANOVA pra taxa de \textit{Memory Bound}
+    
+    \resizebox{0.8\textwidth}{!}{%
+        \input{tabelas/anova_speedup}
+    }
+    
+    ANOVA pro \textit{Speedup}
+
+\end{frame}
+    
+\section{Conclusão}
+\begin{frame}{Conclusão do Projeto}
+Este trabalho apresentou uma análise detalhada do desempenho do algoritmo PageRank em arquiteturas modernas, explorando o impacto de configurações de multithreading, afinidade de processador
+e microarquitetura no tempo de execução.\\
+\vspace{0.5em}
+Nossa análise demonstrou que para algoritmos limitados por memória como o PageRank a
+estratégia padrão de usar o máximo de threads lógicas disponíveis nem sempre resulta no melhor
+desempenho.
+\end{frame}
+
+
+
+\section{Conclusão}
+\begin{frame}{Recomendações e possíveis melhorias}
+Tivemos algumas ideias para melhorar o desempenho da nossa aplicação, como:
+ \begin{enumerate}
+     \item Reduzir o tempo gasto por atrasos na memória. Isso poderia ser feito utilizando um processador com barramento maior, ou com memória \textit{cache} maior.
+     \item Utilizar uma máquina mais atual que a blaise. O processador dela foi lançado a 9 anos atrás, e tecnologias mais recentes (ex. \textit{3D VCache} da AMD) podem melhorar o desempenho dessa aplicação.
+ \end{enumerate}
+
+\end{frame}
+
+\section{Conclusão}
+\begin{frame}{Dificuldades}
+ \begin{itemize}
+     \item Em  diversos momentos a máquina utilizada (blaise) estava alocada por outra pessoa.
+     \item Organizar os dados gerados pelo Intel Vtune Profiler. Ele gera muitos dados, e a maioria não
+era de interesse do nosso grupo. 
+     \item Google Colab não apresentou um \textit{pair programming} satisfatório.
+ \end{itemize}    
+\end{frame}
+
+\section{Conclusão}
+\begin{frame}{Aprendizados}
+ \begin{itemize}
+     \item A importâncida da aplicação de um projeto experimental sólido e replicável.
+     \item Utilização de análise estatística criteriosa para verificar correlações entre os parâmetros do experimento.     
+ \end{itemize}    
+\end{frame}
+
+\section*{}
+\begin{frame}
+    \frametitle{Obrigado!}
+    \InfContacts    
+    \vspace{1em}
+    \centering
+    \tiny % Deixa a fonte bem pequena
+    Todos dados disponíveis no repositório: \url{https://github.com/thgdsg/perf-analysis}
+\end{frame}
+
+\end{document}

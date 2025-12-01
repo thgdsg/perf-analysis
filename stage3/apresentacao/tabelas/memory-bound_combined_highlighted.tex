@@ -1,0 +1,15 @@
+\centering
+\small
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+\multirow{2}*{GRAPH\_NAME} & \multirow{2}*{CONFIG} & \multicolumn{9}{c}{THREADS} \\
+\cmidrule(lr){3-11}
+ & & 1 & 4 & 12 & 22 & 28 & 36 & 44 & 66 & 88 \\
+\cline{1-11}
+\multirow{4}{*}{Friendster} & H\_OFF\_C & \cellcolor{ForestGreen}{29.20} & 33.08 & 41.74 & 56.46 & 66.58 & 70.16 & 73.02 & 73.30 & \cellcolor{BrickRed}{76.84} \\
+ & H\_OFF\_S & \cellcolor{ForestGreen}{29.26} & 40.62 & 52.08 & 62.50 & 67.56 & 70.90 & 73.06 & 73.66 & \cellcolor{BrickRed}{76.20} \\
+ & H\_ON\_C & 33.50 & 21.56 & \cellcolor{ForestGreen}{19.72} & 23.86 & 31.62 & 37.00 & 39.58 & 52.86 & \cellcolor{BrickRed}{68.36} \\
+ & H\_ON\_S & \cellcolor{ForestGreen}{28.34} & 37.18 & 53.38 & 61.76 & 64.26 & 69.26 & \cellcolor{BrickRed}{71.50} & 61.56 & 68.00 \\
+\bottomrule
+\end{tabular}
+\label{tab:memory-bound-combined-highlighted}

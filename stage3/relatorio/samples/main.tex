@@ -1,0 +1,458 @@
+%%
+%% This is file `sample-acmsmall.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,journal,bibtex,acmsmall')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-acmsmall.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\PassOptionsToPackage{table,dvipsnames}{xcolor}
+\documentclass[acmsmall]{acmart}
+\usepackage[utf8]{inputenc}
+\usepackage[inline]{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{placeins}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+\settopmatter{printacmref=false}
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{CC}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmDOI{}
+
+%%
+%% These commands are for a JOURNAL article.
+%%\acmJournal{JACM}
+%\acmVolume{37}
+%\acmNumber{4}
+%\acmArticle{111}
+%\acmMonth{8}
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Avaliação de desempenho do algoritmo PageRank sequencial e paralelo}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Thiago dos Santos Gonçalves}
+\authornote{Ambos os autores contribuíram igualmente neste trabalho.}
+\email{tsgoncalves@inf.ufrgs.br}
+\affiliation{%
+  \institution{Instituto de Informática - UFRGS}
+  \city{Porto Alegre}
+  \state{Rio Grande do Sul}
+  \country{Brasil}
+}
+\author{João Vitor do Amaral Spolavore}
+\authornotemark[1]
+\email{joao.spolavore@inf.ufrgs.br}
+\affiliation{%
+  \institution{Instituto de Informática - UFRGS}
+  \city{Porto Alegre}
+  \state{Rio Grande do Sul}
+  \country{Brasil}
+}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Thiago e João}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+  Este trabalho apresenta uma avaliação de desempenho do algoritmo PageRank, utilizado por muito tempo pelo indexador do \textit{Google}, testado com execução sequencial e paralela. Para isso, esse estudo analisa o comportamento do algoritmo sob diferentes configurações de execução em arquiteturas paralelas. A metodologia experimental consistiu na execução do algoritmo com 9 variações de contagem de \textit{threads}, utilizando 7 grafos de entrada distintos, alternando o estado do \textit{Hyper-Threading}, aplicando diferentes políticas de vinculação de \textit{threads}, e fazendo diferentes análises com o \textit{Intel Vtune Profiler}. Os resultados obtidos demonstram o impacto dessas configurações no tempo de execução e tentam correlacionar o tempo de execução com algumas métricas coletadas e com diferentes variações de configurações. Observamos valores de \textit{speedup} de até $15\times$ dependendo da estratégia de paralelismo adotada para execução.
+\end{abstract}
+
+\keywords{PageRank, Google, Computação Paralela, Computação de Alto Desempenho, Algoritmos, Grafos, Avaliação de Desempenho}
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introdução}
+\subsection{Descrição do Objeto de Pesquisa}
+O algoritmo PageRank, originalmente proposto por Sergey Brin e Larry Page para o motor de busca do \textit{Google}\cite{page1999pagerank}, é um método de análise de \textit{links} que atribui pesos numéricos a cada elemento de uma coleção de documentos ligados, com o objetivo de medir a sua importância relativa. A internet seria modelada como um grafo direcionado $G = (V, E)$, onde os vértices $V$ representam as páginas e as arestas $E$ representam os \textit{hyperlinks}. O conceito central do algoritmo se baseia na ideia de que uma página é importante se for citada por outras páginas importantes.
+
+Matematicamente falando, o cálculo do valor do PageRank ($PR$) de uma página $u$ é definido de forma recursiva. A equação que define a distribuição de probabilidade do "surfista aleatório" (\textit{random surfer}) é dada por:
+
+\begin{equation} \label{eq:pagerank}
+    PR(u) = \frac{1-d}{N} + d \sum_{v \in B_u} \frac{PR(v)}{L(v)}
+\end{equation}
+
+\noindent onde $d$ é o fator de amortecimento, $N$ é o número total de páginas, $B_u$ é o conjunto de páginas que apontam para $u$, e $L(v)$ é o número de links saindo da página $v$.
+
+Do ponto de vista computacional, que é o foco deste trabalho, o cálculo do PageRank é resolvido através do "Método das Potências"\cite{wiki:Power_iteration}. Este processo envolve a multiplicação iterativa de um vetor de classificação por uma matriz que representa a estrutura do grafo até que os valores entrem em convergência dentro de uma margem de erro predefinida. Devido o enorme volume de dados da matriz esparsa da internet, este algoritmo demanda intenso processamento de ponto flutuante e acesso à memória dependendo da entrada. Essas características fazem com que o PageRank seja um bom algoritmo para estudo de escalabilidade paralela, justificando nosso estudo do comportamento da escolha de \textit{threads}, afinidade e \textit{Hyper-Threading} para otimizar o tempo de convergência.
+
+\subsection{Objetivos do Trabalho}
+Com isto definido, nós iremos analisar o desempenho do algoritmo PageRank em uma máquina do Parque Computacional de Alto Desempenho (PCAD) do Instituto de Informática (INF) da Universidade Federal do Rio Grande do Sul (UFRGS) \cite{PCAD}. Para realizar essa análise, utilizaremos o \textit{Intel VTune Profiler} \cite{IntelProfiler}, para obter métricas mais aprofundadas de uso dos núcleos durante a execução do algoritmo, como também executaremos sem esse \textit{profiler} pra obtermos o tempo de execução e calcularmos dados com base nele.
+
+Mais especificamente, dividiremos nosso objetivo principal de analisar o algoritmo PageRank nesses sub-objetivos:
+\begin{itemize}
+    \item Comparar tempos de execução/\textit{speedup} entre diferentes configurações.
+    \item Associar as métricas adquiridas com possíveis causas pra diferenças nos tempos de execução.
+\end{itemize}
+
+Assim conseguiremos obter mais informações sobre a escalabilidade do algoritmo PageRank e também descobrir o que limita o desempenho do nosso algoritmo dentro do sistema em que ele foi executado.
+
+\subsection{Revisão da Proposta e Metodologia}
+De início, nós planejamos apenas utilizar o \textit{Intel Vtune Profiler} pra obter tanto o tempo de execução quanto as métricas que iríamos utilizar nesse trabalho.
+Porém, conforme fomos realizando os experimentos, percebemos que executar apenas com o \textit{Intel Vtune Profiler} não nos entregaria os verdadeiros resultados de tempo devido ao \textit{overhead} introduzido.
+Isso nos levou a realizar mais execuções sem esse \textit{profiler}, realizando mais repetições por configuração pra obter maior precisão em nossos resultados de tempo de execução e dividindo nossa análise entre as execuções com o \textit{profiler} e as execuções sem.
+
+Fora isso, desde o início tínhamos confiança de que nosso projeto seria plausível, apenas não sabíamos exatamente como realizar essa análise do desempenho. Com a ajuda do professor, essa avaliação se tornou possível e seguiu critérios de maior rigor científico.
+
+
+\section{Fundamentação Teórica}
+O \textit{Intel VTune Profiler} \cite{IntelProfiler} é uma ferramenta pra análise de desempenho que ajuda os desenvolvedores e analistas de \textit{hardware} a otimizar o desempenho de aplicações e sistemas, identificando gargalos em \textit{softwares} que utilizam CPU, GPU ou FPGA. Ele analisa como uma aplicação usa os recursos de \textit{hardware}, mostrando onde o código está mais lento, identificando problemas na memória \textit{cache}, sincronização de \textit{threads} e eficiência na utilização do processador. A ferramenta fornece informações detalhadas e ajuda a encontrar áreas para melhoria de desempenho em códigos seriais e paralelos. 
+
+O repositório \textit{GAPBS} \cite{beamer2017gapbenchmarksuite} é uma coleção de \textit{benchmarks} de algoritmos de operações em grafos consolidada na comunidade acadêmica, citado em ao menos 20 artigos publicados em revistas e conferências revisadas por pares. Ele foi criado por estudantes da universidade de \textit{Berkley} e possui algoritmos como busca por profundidade, contagem de triângulos, e o nosso objeto de pesquisa, o algoritmo PageRank.
+Esse repositório implementa seus \textit{kernels} em C++ e OpenMP \cite{wiki:OpenMP}, com saídas e entradas simples pro usuário final.
+
+O repositório \textit{Stanford Large Network Dataset Collection} (SNAP) \cite{leskovec2016snap} é uma coleção de grafos de entrada da universidade de \textit{Stanford}. Também consolidado academicamente e com vários artigos já publicados \cite{SNAP}, os grafos disponibilizados que representam relações entre páginas da internet ou entre usuários de aplicativos foram essenciais para nosso trabalho.
+
+
+\section{Metodologia}
+Nós consideramos os seguintes grafos de entrada com as seguintes características:
+
+\begin{table}[hbt!]
+    \centering
+    \caption{Grafos utilizados nos experimentos}
+    \label{tab:grafos_entrada}
+    
+    \begin{tabular}{lrr}
+        \toprule
+        \textbf{Grafo} & \textbf{Vértices} & \textbf{Arestas} \\
+        \midrule
+        Friendster     & 65.608.366        & 1.806.067.135    \\
+        LiveJournal    & 3.997.962         & 34.681.189       \\
+        Orkut          & 3.072.441         & 117.185.083      \\
+        BerkStan       & 685.230           & 7.600.595        \\
+        Google         & 875.713           & 5.105.039        \\
+        NotreDame      & 325.729           & 1.497.134        \\
+        Stanford       & 281.903           & 2.312.497        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Utilizamos a implementação do algoritmo PageRank do repositório \textit{GAPBS}, já mencionado anteriormente. Nesta implementação, ele utiliza uma margem de erro de $1^{-4}$, e um fator de amortecimento de $0,85$.
+
+Executamos nosso algoritmo na máquina blaise do GPPD. Essa máquina possui 2 processadores \textit{Intel(R) Xeon(R) E5-2699 v4} com $256GB$ de memória RAM DDR4, totalizando 88 \textit{threads} e 44 núcleos operando a 2,2$GHz$ e com suporte a \textit{Turbo Boost}, levando os núcleos a operarem a até 3,6$GHz$ com 55$MB$ de memória \textit{cache} compartilhada. Então, para nossos experimentos, consideramos apenas 44 \textit{threads} e 22 núcleos. Os experimentos foram executados no \textit{kernel} Linux versão 4.19.0-25, com a versão do gcc 8.3.0, e as métricas foram coletadas com o \textit{Intel Vtune Profiler} versão 2021.1.
+
+Essas foram as configurações consideradas em nossos testes:
+
+\noindent \textbf{Quantidade de threads:}
+\begin{itemize*}[label={}]
+    \item 1, \item 4, \item 12, \item 22, \item 28, \item 36, \item 44, \item 66 e \item 88 \textit{threads}.
+\end{itemize*}
+
+\vspace{0.5em}
+
+\noindent \textbf{Tipos de análise do \textit{Intel VTune Profiler}:}
+\begin{itemize*}[label={}]
+    \item hpc-performance;
+    \item hotspots;
+    \item performance-snapshot;
+    \item nenhuma.
+\end{itemize*}
+
+\vspace{0.5em}
+
+\noindent \textbf{Políticas de vinculação de \textit{threads}:}
+\begin{itemize*}[label={}]
+    \item \textit{close};
+    \item \textit{spread}.
+\end{itemize*}
+
+\vspace{0.5em}
+
+\noindent \textbf{Estado do \textit{Hyperthreading}:}
+\begin{itemize*}[label={}]
+    \item ligado (\textbf{HT\_ON});
+    \item desligado (\textbf{HT\_OFF}).
+\end{itemize*}
+
+\vspace{0.5em}
+
+Totalizando 144 combinações de configurações diferentes, com nossas entradas possuindo relacionamentos não-lineares entre si. Além disso, para configurações utilizando o \textit{Intel VTune Profiler} ele executa 5 vezes, e para configurações sem o \textit{Intel VTune Profiler} ele executa 10 vezes. Essa escolha foi devido ao \textit{overhead} do \textit{Intel VTune Profiler}, para dar tempo de realizarmos nossos experimentos dentro de um único \textit{batch} da ferramenta slurm.
+
+As métricas que decidimos analisar estatísticamente em nosso trabalho utilizando o \textit{profiler} foram: \textit{Memory Bound}, \textit{CPI Rate}, e \textit{Average CPU Frequency}.
+A métrica \textit{Memory Bound} é uma porcentagem dos ciclos da execução do programa onde o processador fica esperando operações na memória serem concluídas. A métrica \textit{CPI Rate} é a quantidade de ciclos por instrução média calculada durante toda a execução da aplicação. Por fim, a métrica \textit{Average CPU Frequency} é uma média simples da frequência de operação do processador durante a execução.
+
+Por fim, versionamos nosso código em um repositório \textit{git} disponível em \url{https://github.com/thgdsg/perf-analysis}.
+
+\section{Resultados}
+\subsection{Métricas Brutas do \textit{Intel VTune Profiler}}
+Vamos iniciar comentando sobre as métricas coletadas pelo \textit{Intel Vtune Profiler}. O gráfico abaixo é um agrupamento da frequência média de execução do programa, separando por grafo de entrada, quantidade de \textit{threads}, estado do \textit{Hyperthreading}, e política de vinculação de \textit{threads}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{samples/gráficos/combined_average_cpu_frequency_all_graphs_scatter.pdf}
+  \caption{Gráfico da Frequência Média da CPU por quantidade de \textit{threads} por configuração}
+  \label{grafico_cpu_freq}
+\end{figure}
+
+No gráfico \ref{grafico_cpu_freq} podemos observar um comportamento similar a uma função exponencial decrescente, com grandes quedas na frequência média nos primeiros aumentos na quantidade de \textit{threads} de execução. Além disso, observa-se que executando com apenas 1 \textit{thread} em todos os casos a frequência média fica próxima a $3.6GHz$, o que é a frequência esperada de \textit{Turbo Boost} do processador. E a partir de 22 \textit{threads}, o processador executa em frequências abaixo de $3.0GHz$. Como ele possui 22 núcleos físicos, essa configuração utiliza todos os núcleos, e por isso atinge limites de gasto energético (Watts) e de temperatura (Celsius), tendo que limitar a frequência de operação dos núcleos para evitar desgastes no processador. Esse métrica nos confirma que o processador estava operando com o máximo de desempenho possível durante a execução de nossa aplicação, e valida nossos outros resultados obtidos.
+
+\input{samples/tabelas/memory-bound_combined_highlighted}
+
+A tabela \ref{tab:memory-bound-combined-highlighted} mostra a métrica \textit{Memory Bound} pra todos os grafos e configurações combinados. Por exemplo, \textbf{H\_OFF\_C} se refere a configuração \textit{Hyperthreading} desligado com a política de vinculação de \textit{threads close}, podendo variar de 1 a 88 \textit{threads}. A tabela \ref{tab:cpi-rate-combined-highlighted} é organizada similarmente a tabela \ref{tab:memory-bound-combined-highlighted}.
+
+Como é possível observar na tabela, nenhuma única configuração pra todos os grafos de entrada obteve a melhor ou pior taxa de ciclos ociosos esperando por operações na memória. Isso é particularmente interessante para nossa pesquisa pois uma das nossas hipóteses iniciais era que certas configurações poderiam aumentar bastante a quantidade de uso da memória, o que não foi o caso. Vale acrescentar que o coeficiente de variação médio entre todos os casos foi de aproximadamente 8\%, com pouca variação dessa métrica no geral entre \textit{runs} diferentes na mesma configuração.
+
+\input{samples/tabelas/cpi-rate_combined_highlighted}
+
+Diferentemente da taxa de \textit{Memory Bound}, a taxa de ciclos por instrução na tabela \ref{tab:cpi-rate-combined-highlighted} possui um padrão bem claro, atingindo seu menor valor executando na configuração \textit{single-threaded}, e atingindo seu maior valor executando com 44 ou 88 \textit{threads}. Essa diferenciação entre maior valor em alguns casos está associada a configuração de \textit{Hyperthreading}, pois com ele desligado ele atinge o máximo de \textit{threads} de execução em 44, mas com o \textit{Hyperthreading} ligado o máximo de \textit{threads} é atingido em 88. 
+
+Isso apenas não acontece no grafo Friendster, e nossa hipótese é que isso pode ser devido ao grande tamanho do grafo e altos volumes de transferência de memória nessas quantidades de \textit{threads}, algo que pode ser visto devido aos altos valores (>70\%) de \textit{Memory Bound} desse caso na tabela \ref{tab:memory-bound-combined-highlighted}.
+
+\FloatBarrier
+\subsection{Análise do \textit{Speedup}}
+% --- Figura 1: com-Friendster ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_com-Friendster.pdf}
+    \caption{Análise de Speedup para o grafo com-Friendster.}
+    \label{fig:friendster}
+\end{figure}
+
+% --- Figura 2: web-NotreDame ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_web-NotreDame.pdf}
+    \caption{Análise de Speedup para o grafo web-NotreDame.}
+    \label{fig:notredame}
+\end{figure}
+
+% --- Figura 3: web-Stanford ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_web-Stanford.pdf}
+    \caption{Análise de Speedup para o grafo web-Stanford.}
+    \label{fig:stanford}
+\end{figure}
+
+% --- Figura 4: com-LiveJournal ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_com-LiveJournal.pdf}
+    \caption{Análise de Speedup para o grafo com-LiveJournal.}
+    \label{fig:livejournal}
+\end{figure}
+
+% --- Figura 5: web-Google ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_web-Google.pdf}
+    \caption{Análise de Speedup para o grafo web-Google.}
+    \label{fig:google}
+\end{figure}
+
+% --- Figura 6: com-Orkut ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_com-Orkut.pdf}
+    \caption{Análise de Speedup para o grafo com-Orkut.}
+    \label{fig:orkut}
+\end{figure}
+
+% --- Figura 7: web-BerkStan ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{samples/gráficos/speedup_per_run_with_ci_web-BerkStan.pdf}
+    \caption{Análise de Speedup para o grafo web-BerkStan.}
+    \label{fig:berkstan}
+\end{figure}
+
+Agora iremos comentar sobre o \textit{speedup} obtido executando sem o \textit{Intel Vtune Profiler}, coletado diretamente da aplicação.
+
+Nas figuras \ref{fig:friendster} a \ref{fig:livejournal} é possível observar o \textit{speedup} obtido conforme o número de \textit{threads} foi aumentando, pra cada grafo de entrada. Além disso, nesse gráfico é possível ver o intervalo de confiança de 95\% de cada \textit{speedup} obtido. Na maioria dos gráficos, o intervalo de confiança é tão pequeno que é difícil de perceber, mas em grafos como web-Google e com-Orkut ele é perceptível.
+
+Primeiramente, é possível observar que em algumas das figuras (\ref{fig:friendster}, \ref{fig:notredame}, \ref{fig:stanford}, e \ref{fig:livejournal}) o maior \textit{speedup} obtido foi com a configuração \textbf{HT\_OFF\_close}, e nos casos dos grafos com-Friendster, web-NotreDame, e web-Stanford essa configuração foi executada com 22 \textit{threads}. Acreditamos que o \textit{Hyperthreading} foi o maior responsável por isso, mas que a política de vinculação de \textit{threads close} também pode ter contribuído. 
+Primeiro, executar com 22 \textit{threads} com o \textit{Hyperthreading} desligado está utilizando 100\% da capacidade de um processador físico, sem utilizar \textit{threads} lógicas, que poderiam dividir a memória \textit{cache} do núcleo. Além disso, a política de vinculação de \textit{threads close} nesses casos foi eficaz, conseguindo aproveitar a localidade espacial para obter ganhos no desempenho.
+
+Também é possível observar nas figuras \ref{fig:notredame}, \ref{fig:stanford}, \ref{fig:livejournal}, \ref{fig:google}, e \ref{fig:berkstan} que a política \textit{close} resultou nos menores \textit{speedups} executando com entre 4 a 44 \textit{threads}. Como as \textit{threads} foram alocadas preferencialmente nos mesmos núcleos, isso gerou uma competição por acessos a memória \textit{cache} L2 e L3 (nosso processador não possui memória L1), diminuindo o desempenho atingido por essa configuração. Isto não aconteceu com o grafo web-Friendster e com-Orkut, e nossa hipótese é que foi devido a alta quantidade de arestas proporcionais aos vértices, com o grafo web-Friendster possuindo quase $28\times$ a quantidade de arestas, e o grafo com-Orkut possuindo pouco menos de $39\times$.
+
+\clearpage
+
+\subsection{Análise estatística}
+
+Por fim, faremos a análise estatística dos nossos resultados, tentando correlacionar algumas variáveis de saída entre si e algumas das nossas variáveis de entrada com as de saída.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{samples/gráficos/correlacao_spearman.pdf}
+  \caption{Gráfico da Correlação de Spearman entre as variáveis}
+  \label{grafico_spearman}
+\end{figure}
+
+Primeiramente, na figura \ref{grafico_spearman} podemos observar a correlação de \textit{Spearman} entre as variáveis de saída. Consideramos o \textit{Speedup}, \textit{Memory Bound}, \textit{CPI Rate}, \textit{Average CPU Frequency}, e \textit{Parallel Efficiency}. A eficiência paralela é calculada dividindo o \textit{Speedup} pela quantidade de \textit{threads}.
+
+Podemos ver que a taxa de ciclos por instrução possui uma forte correlação positiva com o \textit{speedup} e negativa com a eficiência paralela, condizente com os dados apresentados anteriormente na tabela \ref{tab:cpi-rate-combined-highlighted}, pois conforme a quantidade de \textit{threads} aumentava, a taxa de ciclos por instrução também aumentava, com o \textit{speedup} aumentando junto até certo ponto (normalmente 22 \textit{threads}). Similarmente, o \textit{memory bound} possuiu uma fraca correlação com a taxa de ciclos por instrução, relacionado com a fraca tendência da aplicação em aumentar o tempo perdido em transferência de memória conforme a quantidade de \textit{threads} aumentava.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{samples/gráficos/feature_importance.pdf}
+  \caption{Gráfico da \textit{Feature Importance} das variáveis calculada por \textit{Random Forest}}
+  \label{grafico_feature_importance}
+\end{figure}
+
+Dito isso, tentamos realizar um cálculo da importância das variáveis de saída, exceto a eficiência paralela, pra tentar ver o quanto elas estão relacionadas com o \textit{Speedup} adquirido e o quanto elas estão possívelmente limitando o desempenho do programa. Ou seja, relacionando o comportamento da máquina com o desempenho final. Pra isso, utilizamos \textit{Random Forest} com 100 estimadores e semente de execução fixa, e chegamos no resultado visível na figura \ref{grafico_feature_importance}.
+
+Assim, é possível observar que a frequência da CPU tem uma fortíssima importância pro \textit{Speedup} da aplicação, e também que o tempo gasto esperando a memória impacta mais do que os ciclos por instrução, indicando que otimizações na memória podem ser cruciais para melhorar a escalabilidade na aplicação.
+
+Por fim, aplicamos ANOVA pra relacionar nossas variáveis de entrada com as de saída, tanto as métricas, quanto o \textit{speedup} obtido. Calculamos pras variáveis \textit{threads} como controle, \textit{Hyperthreading}, \textit{Binding}, e a interação entre \textit{Hyperthreading} e \textit{Binding}. A coluna \textit{sum\_sq} mostra a magnitude do efeito, a coluna $F$ é uma razão que mostra o quanto as diferenças são devido a variação na entrada (maior = melhor). A coluna \textit{p-value} mostra a probabilidade desse resultado ser aleatório, e está marcado em verde caso seja menor que 0,05 (5\%).
+
+\input{samples/tabelas/anova_average_cpu_frequency}
+Na tabela \ref{tab:anova_average_cpu_frequency} podemos ver que a política de vinculação de \textit{threads} afeta a frequência média. Uma possível razão disso é que manter a política em \textit{close} pode aumentar a temperatura do \textit{chip}, pois núcleos mais próximos fisicamente serão utilizados, atingindo temperaturas máximas mais rápido. E além disso, há interação entre \textit{hyperthreading} e a política escolhida, ou seja, provavelmente ligar o \textit{hyperthreading} e manter a política em \textit{close} seria o pior resultado térmico.
+
+\input{samples/tabelas/anova_cpi_rate}
+Na tabela \ref{tab:anova_cpi_rate}, é possível ver pelo valor $F$ de 21 que o \textit{hyperthreading} possui um impacto tangível nos ciclos por instrução, provavelmente devido ao comportamento dos ciclos por instrução ser fortemente dependente da quantidade de \textit{threads} e da disputa por recursos dentro do núcleo, caso o \textit{Hyperthreading} esteja ativado. Além disso, não há interação visível entre o \textit{hyperthreading} e a política de vinculação pra essa métrica.
+
+\input{samples/tabelas/anova_memory_bound}
+Na tabela \ref{tab:anova_memory_bound} vemos que ambos \textit{hyperthreading} e a política de vinculação impactam a métrica de \textit{Memory Bound}, sendo isso especialmente evidente pelo valor $F$ do \textit{hyperthreading}. Isso é condizente com nossas figuras \ref{fig:notredame}, \ref{fig:stanford}, \ref{fig:livejournal}, e \ref{fig:google}, onde o estado do \textit{Hyperthreading} causou uma diminuição grande no \textit{speedup} da aplicação nesses casos.
+
+\input{samples/tabelas/anova_speedup}
+Por fim, na tabela \ref{tab:anova_speedup} podemos observar que tanto o \textit{hyperthreading} quanto a política de vinculação não possuem impacto significativo no \textit{speedup} da aplicação num contexto global. E além disso, elas não possuem interação estatísticamente relevante entre si nesse contexto.
+
+Embora essa análise de variância global não tenha demonstrado nenhuma significância estatística do estado do \textit{hyperthreading} e da política de vinculação de \textit{threads} no \textit{speedup}, os resultados anteriores demonstram que há uma grande mudança no comportamento da máquina, e os resultados de cada grafo de entrada dependem da sensibilidade da entrada ao comportamento. Uma análise crítica com mais métricas seria necessária para gerar um modelo com maior certeza sobre o que afeta o desempenho da aplicação.
+
+\section{Conclusão}
+\subsection{Conclusões}
+Este trabalho apresentou uma análise detalhada do desempenho do algoritmo PageRank em arquiteturas modernas, explorando o impacto de configurações de \textit{multithreading}, afinidade de processador e microarquitetura no tempo de execução. Através de uma metodologia experimental combinando métricas de tempo real com instrumentação via \textit{Intel VTune Profiler} e validação estatística via ANOVA, conseguimos identificar alguns gargalos que limitam a escalabilidade de algoritmos baseados em grafos.
+
+Nossa análise demonstrou que para algoritmos limitados por memória como o PageRank a estratégia padrão de usar o máximo de \textit{threads} lógicas disponíveis nem sempre resulta no melhor desempenho. Observamos que configurações utilizando apenas núcleos físicos com \textit{Hyper-Threading} desligado (\textbf{HT\_OFF}) frequentemente superaram o uso de todas as \textit{threads} lógicas.
+
+E com isso, nós chegamos a três conclusões principais:
+\begin{itemize}
+    \item Observamos um aumento na métrica do \textit{CPI Rate} e \textit{Memory Bound} ao ligarmos o \textit{hyperthreading}. Isso indica que o \textit{hyperthreading} aumentou a disputa por recursos de memória e \textit{caches} L2/L3, sem oferecer ganho de vazão suficiente para compensar a latência adicional. Na maioria dos grafos, executar com o \textit{hyperthreading} desativado foi a melhor configuração considerando o \textit{speedup}.
+    
+    \item A política de vinculação \textit{close} mostrou-se superior em diversos cenários, especialmente quando o número de \textit{threads} se limitava a um único soquete físico (menor que 44). Isso sugere que a comunicação entre processadores diferentes na mesma placa-mãe pode causar uma latência significativa na execução. No entanto, em grafos com estruturas de alta densidade (como o \textit{com-Orkut}), a política \textit{spread} pode ser necessária para evitar limitações térmicas do processador.
+
+    \item E por fim, a análise estatística juntamente com os gráficos de \textit{speedup} nos demonstraram que não existe uma única configuração ideal independente da entrada. A eficiência da configuração nesse algoritmo depende altamente da sensibilidade da entrada ao estado atual do sistema.
+\end{itemize}
+
+\subsection{Aprendizados e Dificuldades}
+Nesse trabalho, desenvolvemos as seguintes habilidades:
+\begin{itemize}
+\item Aprendemos a fazer análises estatísticas criteriosas.
+\item Aprendemos a organizar nossos dados, e a inseri-los em uma plataforma reprodutível
+\item Aprendemos a fazer pesquisa de maneira séria, considerando variações estatísticas e construindo modelos que minimizem o impacto dessas variações.
+\end{itemize}
+
+Além disso, essas foram nossas principais dificuldades:
+\begin{itemize}
+\item Organizar os dados gerados pelo \textit{Intel Vtune Profiler}. Ele gera muitos dados, e a maioria não era de interesse do nosso grupo.
+\item A nossa máquina nem sempre estava disponível para ser alocada.
+\item Desligar o \textit{hyperthreading} na máquina foi difícil, pois é necessário fazer manualmente, não havendo nenhum programa ou comando pronto que possa fazer isso.
+\item Não estávamos acostumados a fazer pesquisa dessa maneira, utilizar \textit{notebooks} é algo novo pro grupo.
+\end{itemize}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{samples/refs}
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-acmsmall.tex'.
