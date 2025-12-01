@@ -75,10 +75,6 @@
 \end{frame}
 
 \begin{frame}{Definição dos experimentos}
-    Escolhemos utilizar o governor DVFS \textit{performance} com o comando \texttt{cpufreq-set -g performance}. \\
-    \vspace{0.5em}
-    A fim de centralizar todos as instâncias dos experimentos desejados e automatizar o processo de execução através de scripts, criamos um csv contendo a definição de todos os nossos experimentos denominado experiments.csv.\\
-    \vspace{0.5em}
     Para obter o tempo de execução da programa (\textit{Elapsed time}) não utilizamos o profiler da Intel. Uma vez que a sua utilização adiciona um \textit{overhead} significativo nessa métrica.\\
     \vspace{0.5em} 
     Executamos cada configuração 5 vezes utilizando o Vtune e 10 vezes sem a utilização do profiler. 
@@ -89,23 +85,15 @@
     Consideramos as seguintes opções para análise:
     \begin{itemize}
         \item \textbf{Número de Threads}: {1, 4, 12, 22, 28, 36, 44, 66, 88}.
-        \item \textbf{Tipo de Análise feita pelo Profiler}: {hpc-performance, hotspots, performance-snapshot}.
-        Importante para obter informações referentes a hardware, como por exemplo taxa de ciclos por instrução , utilização da memória entre outros.
-    \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Parâmetros Considerados (cont.)}
-    \begin{itemize}
-        \item \textbf{Estado do Hyperthreading (ON/OFF)}: Com o objetivo de avaliar o impacto no desempenho, forçamos 1 thread por core com a variável \texttt{OMP\_PLACES=cores/threads} e reduzimos visibilidade de threads lógicas com \texttt{GOMP\_CPU\_AFFINITY} e o comando \texttt{taskset -c [NÚMEROS DOS CORES]}.
-        \item \textbf{Política de \textit{Binding} de Threads}: Analisa o impacto da distribuição de threads entre os dois processadores via \texttt{OMP\_PROC\_BIND} com essas opções:
+  \item \textbf{Estado do Hyperthreading (ON/OFF)}: Com o objetivo de avaliar o impacto no desempenho, forçamos 1 thread por core com a variável \texttt{OMP\_PLACES=cores/threads} e reduzimos visibilidade de threads lógicas com \texttt{GOMP\_CPU\_AFFINITY} e o comando \texttt{taskset -c [NÚMEROS DOS CORES]}.
+        \item \textbf{Política de \textit{Binding} de Threads}:Distribuição de threads entre os núcleos dos processadores via \texttt{OMP\_PROC\_BIND} com essas opções:
         \begin{itemize}
             \item \texttt{close}: Vincula threads a lugares próximos à thread pai, útil para localidade de cache.
             \item \texttt{spread}: Distribui threads em partições mais distantes, útil para reduzir contenção em recursos compartilhados.
         \end{itemize}
     \end{itemize}
 \end{frame}
+
 
 \section{Algoritmo e Dados}
 
